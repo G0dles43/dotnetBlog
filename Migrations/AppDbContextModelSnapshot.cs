@@ -53,6 +53,9 @@ namespace BlogApp.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("PostId")
                         .HasColumnType("INTEGER");
 
@@ -84,6 +87,9 @@ namespace BlogApp.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagePath")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Likes")

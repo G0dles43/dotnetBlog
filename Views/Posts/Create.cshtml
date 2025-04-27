@@ -11,6 +11,10 @@
         <textarea asp-for="Content" class="form-control"></textarea>
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
+    <div class="mb-3"></div>
+    <label class="form-label">Upload Image</label>
+    <input type="file" name="imageFile" class="form-control" accept="image/*" />
+    </div>
     <input type="hidden" asp-for="BlogId" value="@Model.BlogId" />
     <button type="submit" class="btn btn-success">Create New Post</button>
 </form>

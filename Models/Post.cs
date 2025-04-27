@@ -11,7 +11,7 @@ namespace BlogApp.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public int ViewCount { get; set; } = 0;
         public int Likes { get; set; } = 0;
-
+        public string? ImagePath { get; set; }
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

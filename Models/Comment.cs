@@ -16,6 +16,7 @@ namespace BlogApp.Models
         public int PostId { get; set; } // Powiązanie z postem
         public Post Post { get; set; } = null!;
 
+        public string? ImagePath { get; set; }
         public int Rating { get; set; } = 0; // Ocenianie komentarzy
     }
 }

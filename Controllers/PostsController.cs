@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using BlogApp.Data;
 using BlogApp.Models;
-
+using SixLabors.ImageSharp;          
+using SixLabors.ImageSharp.Processing; 
 
 
 namespace BlogApp.Controllers
@@ -83,7 +84,8 @@ namespace BlogApp.Controllers
         // POST: Posts/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,BlogId")] Post post)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,BlogId")] Post post,
+                                                        IFormFile? imageFile)
         {
             if (id != post.Id)
             {
@@ -92,6 +94,10 @@ namespace BlogApp.Controllers
 
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    post.ImagePath = await ProcessImage(imageFile);
+                }
                 try
                 {
                     _context.Update(post);
@@ -111,6 +117,23 @@ namespace BlogApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(post);
+        }
+        
+        private async Task<string> ProcessImage(IFormFile imageFile)
+        {
+            var uploadsFolder = Path.Combine("wwwroot", "uploads");
+            Directory.CreateDirectory(uploadsFolder);
+            
+            var uniqueFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            using (var image = await Image.LoadAsync(imageFile.OpenReadStream()))
+            {
+                image.Mutate(x => x.Resize(800, 600)); // Wymiary 800x600 px
+                await image.SaveAsync(filePath);
+            }
+
+            return "/uploads/" + uniqueFileName;
         }
 
         // GET: Posts/Delete/5

@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BlogApp.2qu86c4o2s.bundle.scp.css"
+      "PackagePath": "staticwebassets\\BlogApp.1hc9v2fk66.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\css\\site.css",
@@ -255,6 +255,22 @@
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\7c366959-6713-4e0f-8c9b-b78f27f0cbfa_goofy.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7c366959-6713-4e0f-8c9b-b78f27f0cbfa_goofy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\a5aff330-2ee0-4152-8c39-201bc0804ad5_413297596_356197690502736_5906773763697615513_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a5aff330-2ee0-4152-8c39-201bc0804ad5_413297596_356197690502736_5906773763697615513_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\bbd07566-86c0-47d3-9e86-e42c809fc2c8_8caaa1e2-61c2-4f88-847c-80d2ca427aae.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bbd07566-86c0-47d3-9e86-e42c809fc2c8_8caaa1e2-61c2-4f88-847c-80d2ca427aae.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d6ba8ed3-4470-4028-806a-d26aadcfd019_413297596_356197690502736_5906773763697615513_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d6ba8ed3-4470-4028-806a-d26aadcfd019_413297596_356197690502736_5906773763697615513_n.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BlogApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
