@@ -120,5 +120,21 @@ namespace BlogApp.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Details(int? id)
+{
+    if (id == null)
+    {
+        return NotFound();
     }
+
+    var blog = await _context.Blogs
+        .FirstOrDefaultAsync(b => b.Id == id);
+    if (blog == null)
+    {
+        return NotFound();
+    }
+    return View(blog);
+}
+    }
+    
 }

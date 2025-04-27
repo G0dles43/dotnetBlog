@@ -1,33 +1,20 @@
 @model BlogApp.Models.Post
-@{
-    ViewData["Title"] = "Create Post";
-}
 
-<div class="container py-4">
-    <h1>@ViewData["Title"]</h1>
-    <form asp-action="Create" method="post">
-        <div class="mb-3">
-            <label asp-for="Title" class="form-label"></label>
-            <input asp-for="Title" class="form-control" />
-            <span asp-validation-for="Title" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="Content" class="form-label"></label>
-            <textarea asp-for="Content" class="form-control" rows="6"></textarea>
-            <span asp-validation-for="Content" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <label asp-for="BlogId" class="form-label">Blog</label>
-            <select asp-for="BlogId" class="form-select" asp-items="@(new SelectList(ViewBag.Blogs, "Id", "Title"))">
-                <option value="">-- choose blog --</option>
-            </select>
-            <span asp-validation-for="BlogId" class="text-danger"></span>
-        </div>
-        <button type="submit" class="btn btn-success">Save</button>
-        <a asp-action="Index" class="btn btn-secondary">Back</a>
-    </form>
-</div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+<form asp-action="Create" method="post">
+  @* ukryte pole przekazujące do POST właściwość BlogId *@
+  <input asp-for="BlogId" type="hidden" />
+  
+  <div class="mb-3">
+    <label asp-for="Title" class="form-label"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+  </div>
+  
+  <div class="mb-3">
+    <label asp-for="Content" class="form-label"></label>
+    <textarea asp-for="Content" class="form-control"></textarea>
+    <span asp-validation-for="Content" class="text-danger"></span>
+  </div>
+  
+  <button type="submit" class="btn btn-success">Save Post</button>
+</form>

@@ -8,6 +8,14 @@
     <p class="lead">@Model.Description</p>
 
     <h3 class="mt-5">Posts</h3>
+        <p>
+    <a asp-controller="Posts"
+        asp-action="Create"
+        asp-route-blogId="@Model.Id"
+        class="btn btn-primary">
+        Create New Post
+    </a>
+    </p>
     @if (!Model.Posts.Any()) {
         <p>No posts yet.</p>
     } else {

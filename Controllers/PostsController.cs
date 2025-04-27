@@ -41,6 +41,8 @@ namespace BlogApp.Controllers
         // GET: Posts/Create
         public IActionResult Create()
         {
+            // pobierz listę blogów z bazy
+            ViewBag.Blogs = _context.Blogs.ToList();
             return View();
         }
 
@@ -49,13 +51,17 @@ namespace BlogApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Content,BlogId")] Post post)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Add(post);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewBag.Blogs = _context.Blogs.ToList();
+                return View(post);
             }
-            return View(post);
+
+            _context.Add(post);
+            await _context.SaveChangesAsync();
+
+            // przekieruj do Details bloga, by zobaczyć nowy post
+            return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
         }
 
         // GET: Posts/Edit/5

@@ -1,15 +1,21 @@
 @model IEnumerable<BlogApp.Models.Blog>
+
 @{
-    ViewData["Title"] = "All Blogs";
+  ViewData["Title"] = "All Blogs";
 }
 
 <div class="container py-4">
-    <h1>@ViewData["Title"]</h1>
-    <ul class="list-group">
+  <h1>@ViewData["Title"]</h1>
+
+  <p>
+    <a asp-action="Create" class="btn btn-primary">Create New Blog</a>
+  </p>
+
+  <ul class="list-group">
     @foreach(var b in Model) {
-        <li class="list-group-item">
-            <a asp-action="Details" asp-route-id="@b.Id">@b.Title</a>
-        </li>
+      <li class="list-group-item">
+        <a asp-action="Details" asp-route-id="@b.Id">@b.Title</a>
+      </li>
     }
-    </ul>
+  </ul>
 </div>
