@@ -10,9 +10,9 @@ namespace BlogApp.Controllers
     [Authorize]
     public class BlogsController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public BlogsController(AppDbContext context)
+        public BlogsController(ApplicationDbContext context)
         {
             _context = context;
         }
