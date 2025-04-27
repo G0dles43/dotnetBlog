@@ -1,0 +1,23 @@
+@model IEnumerable<BlogApp.Models.Comment>
+@{
+    ViewData["Title"] = "All Comments";
+}
+
+<div class="container py-4">
+    <h1>@ViewData["Title"]</h1>
+    <a asp-action="Create" class="btn btn-primary">Create New Comment</a>
+
+    <ul class="list-group mt-3">
+        @foreach (var comment in Model)
+        {
+            <li class="list-group-item">
+                <p>@comment.Content</p>
+                <small class="text-muted">by @comment.UserId on @comment.CreatedAt.ToString("g")</small>
+                <div class="mt-2">
+                    <a asp-action="Edit" asp-route-id="@comment.Id" class="btn btn-sm btn-secondary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@comment.Id" class="btn btn-sm btn-danger">Delete</a>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

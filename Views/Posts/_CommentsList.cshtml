@@ -1,0 +1,9 @@
+@model IEnumerable<BlogApp.Models.Comment>
+@foreach(var c in Model) {
+    <div class="card mb-2">
+      <div class="card-body">
+        <p>@c.Content</p>
+        <small class="text-muted">by @c.UserId on @c.CreatedAt.ToString("g")</small>
+      </div>
+    </div>
+}

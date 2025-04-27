@@ -1,0 +1,22 @@
+@model BlogApp.Models.Comment
+@{
+    ViewData["Title"] = "Add Comment";
+}
+
+<div class="container py-4">
+    <h1>@ViewData["Title"]</h1>
+    <form asp-action="Create" method="post">
+        <input type="hidden" name="PostId" value="@ViewBag.PostId" />
+        <div class="mb-3">
+            <label asp-for="Content" class="form-label"></label>
+            <textarea asp-for="Content" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Add Comment</button>
+        <a asp-action="Details" asp-controller="Posts" asp-route-id="@ViewBag.PostId" class="btn btn-secondary">Back to Post</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
