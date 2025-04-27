@@ -123,6 +123,21 @@ namespace BlogApp.Migrations
                     b.ToTable("Profiles");
                 });
 
+            modelBuilder.Entity("BlogApp.Models.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tags");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -332,13 +347,11 @@ namespace BlogApp.Migrations
 
             modelBuilder.Entity("BlogApp.Models.Post", b =>
                 {
-                    b.HasOne("BlogApp.Models.Blog", "Blog")
+                    b.HasOne("BlogApp.Models.Blog", null)
                         .WithMany("Posts")
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Blog");
                 });
 
             modelBuilder.Entity("BlogApp.Models.Profile", b =>

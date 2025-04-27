@@ -2,7 +2,6 @@ C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\appsettings.Develo
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\appsettings.json
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\BlogApp.staticwebassets.runtime.json
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\BlogApp.staticwebassets.endpoints.json
-C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\app.db
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\BlogApp.exe
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\BlogApp.deps.json
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\BlogApp.runtimeconfig.json
@@ -585,3 +584,5 @@ C:\Users\CzaroAmaro\Desktop\C#blog\dotnetBlog\obj\Debug\net9.0\refint\BlogApp.dl
 C:\Users\CzaroAmaro\Desktop\C#blog\dotnetBlog\obj\Debug\net9.0\BlogApp.pdb
 C:\Users\CzaroAmaro\Desktop\C#blog\dotnetBlog\obj\Debug\net9.0\BlogApp.genruntimeconfig.cache
 C:\Users\CzaroAmaro\Desktop\C#blog\dotnetBlog\obj\Debug\net9.0\ref\BlogApp.dll
+C:\Users\barte\Desktop\programowanie\BlogApp\obj\Debug\net9.0\BlogApp.sourcelink.json
+C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\app.db

@@ -7,7 +7,5 @@ namespace BlogApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        // relacja wiele-do-wielu z Postami
-        public ICollection<PostTag> PostTags { get; set; } = new List<PostTag>();
     }
 }

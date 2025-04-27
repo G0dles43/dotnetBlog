@@ -15,6 +15,5 @@ namespace BlogApp.Data
         public DbSet<Comment> Comments { get; set; } = null!;
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<PostTag> PostTags { get; set; }
     }
 }

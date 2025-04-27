@@ -39,29 +39,29 @@ namespace BlogApp.Controllers
         }
 
         // GET: Posts/Create
-        public IActionResult Create()
+        public IActionResult Create(int? blogId)
         {
-            // pobierz listę blogów z bazy
-            ViewBag.Blogs = _context.Blogs.ToList();
-            return View();
+            if (!blogId.HasValue)
+            {
+                return BadRequest("BlogId is required.");
+            }
+
+            var post = new Post { BlogId = blogId.Value };
+            return View(post);
         }
 
         // POST: Posts/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Content,BlogId")] Post post)
+        public async Task<IActionResult> Create([Bind("Title,Content,BlogId")] Post post)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                ViewBag.Blogs = _context.Blogs.ToList();
-                return View(post);
+                _context.Add(post);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
             }
-
-            _context.Add(post);
-            await _context.SaveChangesAsync();
-
-            // przekieruj do Details bloga, by zobaczyć nowy post
-            return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
+            return View(post);
         }
 
         // GET: Posts/Edit/5

@@ -10,9 +10,9 @@ namespace BlogApp.Controllers
     [Authorize]
     public class BlogsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly AppDbContext _context;
 
-        public BlogsController(ApplicationDbContext context)
+        public BlogsController(AppDbContext context)
         {
             _context = context;
         }
@@ -121,20 +121,23 @@ namespace BlogApp.Controllers
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Details(int? id)
-{
-    if (id == null)
-    {
-        return NotFound();
-    }
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-    var blog = await _context.Blogs
-        .FirstOrDefaultAsync(b => b.Id == id);
-    if (blog == null)
-    {
-        return NotFound();
-    }
-    return View(blog);
-}
+            var blog = await _context.Blogs
+                .Include(b => b.Posts)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (blog == null)
+            {
+                return NotFound();
+            }
+
+            return View(blog);
+        }
     }
     
 }
