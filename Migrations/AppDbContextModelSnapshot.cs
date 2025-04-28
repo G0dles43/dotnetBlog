@@ -53,13 +53,16 @@ namespace BlogApp.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Dislikes")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("ImagePath")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PostId")
+                    b.Property<int>("Likes")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Rating")
+                    b.Property<int>("PostId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UserId")
@@ -88,6 +91,9 @@ namespace BlogApp.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Dislikes")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("TEXT");
@@ -142,6 +148,29 @@ namespace BlogApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tags");
+                });
+
+            modelBuilder.Entity("CommentVote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CommentId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsUpvote")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CommentId");
+
+                    b.ToTable("CommentVotes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -340,6 +369,29 @@ namespace BlogApp.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PostVote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsUpvote")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("PostVotes");
+                });
+
             modelBuilder.Entity("BlogApp.Models.Comment", b =>
                 {
                     b.HasOne("BlogApp.Models.Post", "Post")
@@ -369,6 +421,15 @@ namespace BlogApp.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("CommentVote", b =>
+                {
+                    b.HasOne("BlogApp.Models.Comment", null)
+                        .WithMany("Votes")
+                        .HasForeignKey("CommentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -422,14 +483,30 @@ namespace BlogApp.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PostVote", b =>
+                {
+                    b.HasOne("BlogApp.Models.Post", null)
+                        .WithMany("Votes")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BlogApp.Models.Blog", b =>
                 {
                     b.Navigation("Posts");
                 });
 
+            modelBuilder.Entity("BlogApp.Models.Comment", b =>
+                {
+                    b.Navigation("Votes");
+                });
+
             modelBuilder.Entity("BlogApp.Models.Post", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Votes");
                 });
 #pragma warning restore 612, 618
         }

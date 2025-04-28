@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BlogApp.1hc9v2fk66.bundle.scp.css"
+      "PackagePath": "staticwebassets\\BlogApp.wl5y17lzn6.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\wwwroot\\css\\site.css",
@@ -275,6 +275,10 @@
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\wwwroot\\uploads\\d6ba8ed3-4470-4028-806a-d26aadcfd019_413297596_356197690502736_5906773763697615513_n.jpg",
       "PackagePath": "staticwebassets\\uploads\\d6ba8ed3-4470-4028-806a-d26aadcfd019_413297596_356197690502736_5906773763697615513_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\wwwroot\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BlogApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

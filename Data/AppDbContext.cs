@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using BlogApp.Models; // <--- dodaj to!
+using BlogApp.Models;
 
 namespace BlogApp.Data
 {
@@ -15,5 +15,7 @@ namespace BlogApp.Data
         public DbSet<Comment> Comments { get; set; } = null!;
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<PostVote> PostVotes { get; set; }
+        public DbSet<CommentVote> CommentVotes { get; set; }
     }
 }

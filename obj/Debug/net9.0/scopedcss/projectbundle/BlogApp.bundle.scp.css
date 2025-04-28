@@ -1,56 +1,87 @@
 /* _content/BlogApp/Views/Shared/_Layout.cshtml.rz.scp.css */
-/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+/* Improved CSS for a cleaner and modern look */
 
 a.navbar-brand[b-gr6vkwv4lw] {
   white-space: normal;
   text-align: center;
-  word-break: break-all;
+  word-break: break-word;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #0056b3;
 }
 
 a[b-gr6vkwv4lw] {
-  color: #0077cc;
+  color: #0056b3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover[b-gr6vkwv4lw] {
+  color: #003d80;
 }
 
 .btn-primary[b-gr6vkwv4lw] {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #007bff;
+  border-color: #0056b3;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover[b-gr6vkwv4lw] {
+  background-color: #0056b3;
+  border-color: #004080;
 }
 
 .nav-pills .nav-link.active[b-gr6vkwv4lw],
 .nav-pills .show > .nav-link[b-gr6vkwv4lw] {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  background-color: #007bff;
+  border-color: #0056b3;
+  border-radius: 0.25rem;
 }
 
 .border-top[b-gr6vkwv4lw] {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #dee2e6;
 }
+
 .border-bottom[b-gr6vkwv4lw] {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .box-shadow[b-gr6vkwv4lw] {
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 button.accept-policy[b-gr6vkwv4lw] {
   font-size: 1rem;
   line-height: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button.accept-policy:hover[b-gr6vkwv4lw] {
+  background-color: #0056b3;
 }
 
 .footer[b-gr6vkwv4lw] {
   position: absolute;
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
+  background-color: #f8f9fa;
+  text-align: center;
   line-height: 60px;
+  border-top: 1px solid #dee2e6;
 }
+
 .credits[b-gr6vkwv4lw] {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #6c757d;
   text-align: center;
   margin-top: 10px;
+  font-style: italic;
 }

@@ -14,8 +14,17 @@
         </div>
     }
 
-    <div class="mb-5">@Html.Raw(Model.Content.Replace("\n","<br/>"))</div>
-
+    <div class="mb-5">
+        @Html.Raw(Model.Content.Replace("\n","<br/>"))
+        <div class="mt-3 vote-buttons">
+            <button class="btn btn-sm btn-outline-success vote-btn" data-id="@Model.Id" data-is-upvote="true">
+                <i class="bi bi-hand-thumbs-up"></i> <span class="count">@Model.Likes</span>
+            </button>
+            <button class="btn btn-sm btn-outline-danger vote-btn" data-id="@Model.Id" data-is-upvote="false">
+                <i class="bi bi-hand-thumbs-down"></i> <span class="count">@Model.Dislikes</span>
+            </button>
+        </div>
+    </div>
     <h3>Comments</h3>
     @if (!Model.Comments.Any())
     {
@@ -35,7 +44,17 @@
                     </div>
                 }
                 <br/>
-                <small class="text-muted">by @c.UserId ona @c.CreatedAt.ToString("g")</small>
+                <small class="text-muted">by @c.UserId on @c.CreatedAt.ToString("g")</small>
+                <div class="mt-2 vote-buttons">
+                <button class="btn btn-xs btn-outline-success comment-vote" 
+                        data-id="@c.Id" data-is-upvote="true">
+                    <i class="bi bi-hand-thumbs-up"></i> <span class="count">@c.Likes</span>
+                </button>
+                <button class="btn btn-xs btn-outline-danger comment-vote" 
+                        data-id="@c.Id" data-is-upvote="false">
+                    <i class="bi bi-hand-thumbs-down"></i> <span class="count">@c.Dislikes</span>
+                </button>
+                </div>
             </li>
         }
         </ul>
@@ -54,3 +73,56 @@
         <button class="btn btn-primary">Post Comment</button>
     </form>
 </div>
+
+<!-- Zmiana w sekcji Scripts -->
+@section Scripts {
+    <script>
+        // Funkcja głosowania dla postów
+        document.querySelectorAll('.vote-btn').forEach(button => {
+            button.addEventListener('click', async function() {
+                const postId = this.dataset.id;
+                const isUpvote = this.dataset.isUpvote === 'true';
+
+                try {
+                    const response = await fetch(`/Posts/VotePost?id=${postId}&isUpvote=${isUpvote}`, {
+                        method: 'POST'
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        // Aktualizuj oba liczniki
+                        const container = this.closest('.vote-buttons');
+                        container.querySelector('.btn-outline-success .count').textContent = data.likes;
+                        container.querySelector('.btn-outline-danger .count').textContent = data.dislikes;
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+
+        // Funkcja głosowania dla komentarzy
+        document.querySelectorAll('.comment-vote').forEach(button => {
+            button.addEventListener('click', async function() {
+                const commentId = this.dataset.id;
+                const isUpvote = this.dataset.isUpvote === 'true';
+
+                try {
+                    const response = await fetch(`/Posts/VoteComment?id=${commentId}&isUpvote=${isUpvote}`, {
+                        method: 'POST'
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        // Aktualizuj oba liczniki
+                        const container = this.closest('.vote-buttons');
+                        container.querySelector('.btn-outline-success .count').textContent = data.likes;
+                        container.querySelector('.btn-outline-danger .count').textContent = data.dislikes;
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    </script>
+}

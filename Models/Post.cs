@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BlogApp.Models;
 
 namespace BlogApp.Models
 {
@@ -11,6 +12,8 @@ namespace BlogApp.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public int ViewCount { get; set; } = 0;
         public int Likes { get; set; } = 0;
+        public int Dislikes { get; set; } = 0;
+    public virtual ICollection<PostVote> Votes { get; set; } = new List<PostVote>();
         public string? ImagePath { get; set; }
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }

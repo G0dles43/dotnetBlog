@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using BlogApp.Models;
 
 namespace BlogApp.Models
 {
@@ -17,6 +18,9 @@ namespace BlogApp.Models
         public Post Post { get; set; } = null!;
 
         public string? ImagePath { get; set; }
-        public int Rating { get; set; } = 0; // Ocenianie komentarzy
+
+        public int Likes { get; set; } = 0;
+        public int Dislikes { get; set; } = 0;
+        public virtual ICollection<CommentVote> Votes { get; set; } = new List<CommentVote>();
     }
 }

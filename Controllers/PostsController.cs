@@ -5,6 +5,8 @@ using BlogApp.Data;
 using BlogApp.Models;
 using SixLabors.ImageSharp;          
 using SixLabors.ImageSharp.Processing; 
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 
 namespace BlogApp.Controllers
@@ -164,5 +166,99 @@ namespace BlogApp.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> VotePost(int id, bool isUpvote)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var post = await _context.Posts
+                .Include(p => p.Votes)
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (post == null) return NotFound();
+
+            var existingVote = post.Votes.FirstOrDefault(v => v.UserId == userId);
+
+            if (existingVote != null)
+            {
+                if (existingVote.IsUpvote == isUpvote)
+                {
+                    // Usuń głos, jeśli ten sam
+                    _context.PostVotes.Remove(existingVote);
+                    if (isUpvote) post.Likes--;
+                    else post.Dislikes--;
+                }
+                else
+                {
+                    // Zmień głos
+                    existingVote.IsUpvote = isUpvote;
+                    post.Likes += isUpvote ? 1 : -1;
+                    post.Dislikes += isUpvote ? -1 : 1;
+                }
+            }
+            else
+            {
+                // Nowy głos
+                post.Votes.Add(new PostVote
+                {
+                    UserId = userId,
+                    IsUpvote = isUpvote
+                });
+                if (isUpvote) post.Likes++;
+                else post.Dislikes++;
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok(new { post.Likes, post.Dislikes });
+        }
+
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> VoteComment(int id, bool isUpvote)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var comment = await _context.Comments
+                .Include(c => c.Votes)
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            if (comment == null) return NotFound();
+
+            var existingVote = comment.Votes.FirstOrDefault(v => v.UserId == userId);
+
+            if (existingVote != null)
+            {
+                if (existingVote.IsUpvote == isUpvote)
+                {
+                    // Usuń głos jeśli ten sam
+                    _context.CommentVotes.Remove(existingVote);
+                    if (isUpvote) comment.Likes--;
+                    else comment.Dislikes--;
+                }
+                else
+                {
+                    // Zmień głos
+                    existingVote.IsUpvote = isUpvote;
+                    comment.Likes += isUpvote ? 1 : -1;
+                    comment.Dislikes += isUpvote ? -1 : 1;
+                }
+            }
+            else
+            {
+                // Nowy głos
+                comment.Votes.Add(new CommentVote
+                {
+                    UserId = userId,
+                    IsUpvote = isUpvote
+                });
+                if (isUpvote) comment.Likes++;
+                else comment.Dislikes++;
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok(new { comment.Likes, comment.Dislikes });
+        }
+
+
     }
 }

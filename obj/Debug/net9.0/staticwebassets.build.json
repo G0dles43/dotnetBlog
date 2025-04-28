@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0ZiQSG8V/f2Legw+bfRMIyVNnCPtAnIqqUMHrGhON3w=",
+  "Hash": "c3bm8H7/Tq/mqCi/WWvx9oFMEdlaJkHbAmn3x8BTCKM=",
   "Source": "BlogApp",
   "BasePath": "_content/BlogApp",
   "Mode": "Default",
@@ -2495,12 +2495,12 @@
       "OriginalItemSpec": "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.4\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-1hc9v2fk66.gz",
+      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-wl5y17lzn6.gz",
       "SourceId": "BlogApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlogApp",
-      "RelativePath": "BlogApp#[.{fingerprint=1hc9v2fk66}]?.styles.css.gz",
+      "RelativePath": "BlogApp#[.{fingerprint=wl5y17lzn6}]?.styles.css.gz",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Alternative",
@@ -2509,19 +2509,19 @@
       "RelatedAsset": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\bundle\\BlogApp.styles.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "nmbicpth4p",
-      "Integrity": "oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=",
+      "Fingerprint": "qkivnp34h4",
+      "Integrity": "NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\bundle\\BlogApp.styles.css"
     },
     {
-      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-1hc9v2fk66.gz",
+      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-wl5y17lzn6.gz",
       "SourceId": "BlogApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlogApp",
-      "RelativePath": "BlogApp#[.{fingerprint=1hc9v2fk66}]!.bundle.scp.css.gz",
+      "RelativePath": "BlogApp#[.{fingerprint=wl5y17lzn6}]!.bundle.scp.css.gz",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Alternative",
@@ -2530,8 +2530,8 @@
       "RelatedAsset": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "nmbicpth4p",
-      "Integrity": "oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=",
+      "Fingerprint": "qkivnp34h4",
+      "Integrity": "NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css"
@@ -4000,8 +4000,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "1hc9v2fk66",
-      "Integrity": "ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=",
+      "Fingerprint": "wl5y17lzn6",
+      "Integrity": "HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\bundle\\BlogApp.styles.css"
@@ -4021,8 +4021,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "1hc9v2fk66",
-      "Integrity": "ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=",
+      "Fingerprint": "wl5y17lzn6",
+      "Integrity": "HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css"
@@ -5454,17 +5454,38 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\d6ba8ed3-4470-4028-806a-d26aadcfd019_413297596_356197690502736_5906773763697615513_n.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\wwwroot\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg",
+      "SourceId": "BlogApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\wwwroot\\",
+      "BasePath": "_content/BlogApp",
+      "RelativePath": "uploads/ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cdkr3waz56",
+      "Integrity": "IJ3ERRec+M2vS+GBJnj1CHuCRM5XzLSzICLFCuA7/BE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg"
     }
   ],
   "Endpoints": [
     {
-      "Route": "BlogApp.1hc9v2fk66.bundle.scp.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-1hc9v2fk66.gz",
+      "Route": "BlogApp.bundle.scp.css",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-wl5y17lzn6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001751313485"
+          "Quality": "0.001605136437"
         }
       ],
       "ResponseHeaders": [
@@ -5474,19 +5495,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "570"
+          "Value": "622"
         },
         {
           "Name": "ETag",
-          "Value": "\"oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=\""
+          "Value": "\"NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
+          "Value": "no-cache"
         },
         {
           "Name": "Content-Encoding",
@@ -5502,26 +5523,18 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=\""
+          "Value": "W/\"HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=\""
         }
       ],
       "EndpointProperties": [
         {
-          "Name": "fingerprint",
-          "Value": "1hc9v2fk66"
-        },
-        {
-          "Name": "label",
-          "Value": "BlogApp.bundle.scp.css"
-        },
-        {
           "Name": "integrity",
-          "Value": "sha256-ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE="
+          "Value": "sha256-HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc="
         }
       ]
     },
     {
-      "Route": "BlogApp.1hc9v2fk66.bundle.scp.css",
+      "Route": "BlogApp.bundle.scp.css",
       "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5531,7 +5544,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1243"
+          "Value": "1811"
         },
         {
           "Name": "Content-Type",
@@ -5539,11 +5552,293 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=\""
+          "Value": "\"HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc="
+        }
+      ]
+    },
+    {
+      "Route": "BlogApp.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-wl5y17lzn6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "622"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM="
+        }
+      ]
+    },
+    {
+      "Route": "BlogApp.styles.css",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-wl5y17lzn6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001605136437"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "622"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc="
+        }
+      ]
+    },
+    {
+      "Route": "BlogApp.styles.css",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\bundle\\BlogApp.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1811"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc="
+        }
+      ]
+    },
+    {
+      "Route": "BlogApp.styles.css.gz",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-wl5y17lzn6.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "622"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM="
+        }
+      ]
+    },
+    {
+      "Route": "BlogApp.wl5y17lzn6.bundle.scp.css",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-wl5y17lzn6.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001605136437"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "622"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wl5y17lzn6"
+        },
+        {
+          "Name": "label",
+          "Value": "BlogApp.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc="
+        }
+      ]
+    },
+    {
+      "Route": "BlogApp.wl5y17lzn6.bundle.scp.css",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1811"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5553,7 +5848,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1hc9v2fk66"
+          "Value": "wl5y17lzn6"
         },
         {
           "Name": "label",
@@ -5561,13 +5856,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE="
+          "Value": "sha256-HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc="
         }
       ]
     },
     {
-      "Route": "BlogApp.1hc9v2fk66.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-1hc9v2fk66.gz",
+      "Route": "BlogApp.wl5y17lzn6.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-wl5y17lzn6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5576,7 +5871,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "570"
+          "Value": "622"
         },
         {
           "Name": "Content-Type",
@@ -5584,11 +5879,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=\""
+          "Value": "\"NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5606,7 +5901,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1hc9v2fk66"
+          "Value": "wl5y17lzn6"
         },
         {
           "Name": "label",
@@ -5614,18 +5909,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo="
+          "Value": "sha256-NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM="
         }
       ]
     },
     {
-      "Route": "BlogApp.1hc9v2fk66.styles.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-1hc9v2fk66.gz",
+      "Route": "BlogApp.wl5y17lzn6.styles.css",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-wl5y17lzn6.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001751313485"
+          "Quality": "0.001605136437"
         }
       ],
       "ResponseHeaders": [
@@ -5635,15 +5930,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "570"
+          "Value": "622"
         },
         {
           "Name": "ETag",
-          "Value": "\"oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=\""
+          "Value": "\"NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5663,13 +5958,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=\""
+          "Value": "W/\"HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1hc9v2fk66"
+          "Value": "wl5y17lzn6"
         },
         {
           "Name": "label",
@@ -5677,12 +5972,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE="
+          "Value": "sha256-HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc="
         }
       ]
     },
     {
-      "Route": "BlogApp.1hc9v2fk66.styles.css",
+      "Route": "BlogApp.wl5y17lzn6.styles.css",
       "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\bundle\\BlogApp.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5692,7 +5987,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1243"
+          "Value": "1811"
         },
         {
           "Name": "Content-Type",
@@ -5700,11 +5995,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=\""
+          "Value": "\"HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5714,7 +6009,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1hc9v2fk66"
+          "Value": "wl5y17lzn6"
         },
         {
           "Name": "label",
@@ -5722,13 +6017,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE="
+          "Value": "sha256-HILFqLh0PBW+AHArkuR9iXSSgD7D6oU3lzNCybSnFNc="
         }
       ]
     },
     {
-      "Route": "BlogApp.1hc9v2fk66.styles.css.gz",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-1hc9v2fk66.gz",
+      "Route": "BlogApp.wl5y17lzn6.styles.css.gz",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-wl5y17lzn6.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5737,7 +6032,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "570"
+          "Value": "622"
         },
         {
           "Name": "Content-Type",
@@ -5745,11 +6040,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=\""
+          "Value": "\"NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
+          "Value": "Mon, 28 Apr 2025 09:21:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5767,7 +6062,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1hc9v2fk66"
+          "Value": "wl5y17lzn6"
         },
         {
           "Name": "label",
@@ -5775,281 +6070,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo="
-        }
-      ]
-    },
-    {
-      "Route": "BlogApp.bundle.scp.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-1hc9v2fk66.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001751313485"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "570"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE="
-        }
-      ]
-    },
-    {
-      "Route": "BlogApp.bundle.scp.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1243"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE="
-        }
-      ]
-    },
-    {
-      "Route": "BlogApp.bundle.scp.css.gz",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\ivhngtwmfa-1hc9v2fk66.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "570"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo="
-        }
-      ]
-    },
-    {
-      "Route": "BlogApp.styles.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-1hc9v2fk66.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001751313485"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "570"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE="
-        }
-      ]
-    },
-    {
-      "Route": "BlogApp.styles.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\scopedcss\\bundle\\BlogApp.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1243"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZV4DntW9PrcMtF7lV5Bm4XsCCMcXQS/6P6bF/Y8xjkE="
-        }
-      ]
-    },
-    {
-      "Route": "BlogApp.styles.css.gz",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\Debug\\net9.0\\compressed\\iqqv5inq0f-1hc9v2fk66.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "570"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 08:07:25 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-oVT26WH7dSirPbZIw7oAv5RDdN4bmkzxRi1R1Sw5UVo="
+          "Value": "sha256-NuW6CdempHagHOAIhEcRuPb6WEnWSygGr148eelqwsM="
         }
       ]
     },
@@ -35880,6 +35901,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-2QSyHnggJdsw51APvMGwlz8W6f3HUSFSrGTeyLeXtbI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.cdkr3waz56.jpg",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\wwwroot\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69318"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IJ3ERRec+M2vS+GBJnj1CHuCRM5XzLSzICLFCuA7/BE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 09:10:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cdkr3waz56"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IJ3ERRec+M2vS+GBJnj1CHuCRM5XzLSzICLFCuA7/BE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\wwwroot\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69318"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IJ3ERRec+M2vS+GBJnj1CHuCRM5XzLSzICLFCuA7/BE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 09:10:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IJ3ERRec+M2vS+GBJnj1CHuCRM5XzLSzICLFCuA7/BE="
         }
       ]
     }
