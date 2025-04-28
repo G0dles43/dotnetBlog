@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj": {}
+    "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj": {
+    "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj",
+        "projectUniqueName": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
         "projectName": "BlogApp",
-        "projectPath": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj",
+        "projectPath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
         "packagesPath": "C:\\Users\\barte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\",
+        "outputPath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\barte\\AppData\\Roaming\\NuGet\\NuGet.Config"

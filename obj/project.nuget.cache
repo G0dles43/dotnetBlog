@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MgwPVBluOJo=",
+  "dgSpecHash": "MhdwHXmgOuw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj",
+  "projectFilePath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barte\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

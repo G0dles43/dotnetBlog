@@ -19,14 +19,20 @@
             {
                 <li class="list-group-item">
                     <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id">@post.Title</a>
+                    <span class="float-end">
+                        <a asp-controller="Posts" asp-action="Edit" asp-route-id="@post.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-controller="Posts" asp-action="Delete" asp-route-id="@post.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </span>
                 </li>
             }
         </ul>
     }
+    
     <div class="mt-4">
-           <a asp-controller="Posts" asp-action="Create" asp-route-blogId="@Model.Id" class="btn btn-primary">
-    Create New Post
-</a>
+        <a asp-controller="Posts" asp-action="Create" asp-route-blogId="@Model.Id" class="btn btn-primary">
+            Create New Post
+        </a>
+    </div>
   
     <div class="mt-4">
         <a asp-action="Index" class="btn btn-secondary">Back to Blogs</a>

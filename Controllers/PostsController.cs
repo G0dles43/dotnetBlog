@@ -6,6 +6,7 @@ using BlogApp.Models;
 using SixLabors.ImageSharp;          
 using SixLabors.ImageSharp.Processing; 
 using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Http;
 
 
@@ -68,6 +69,7 @@ namespace BlogApp.Controllers
         }
 
         // GET: Posts/Edit/5
+        // GET: Posts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,19 +77,24 @@ namespace BlogApp.Controllers
                 return NotFound();
             }
 
-            var post = await _context.Posts.FindAsync(id);
+            var post = await _context.Posts
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
                 return NotFound();
             }
+
+            // Dodaj listę blogów do ViewBag.Blogs
+            ViewBag.Blogs = new SelectList(_context.Blogs, "Id", "Title", post.BlogId);
+
             return View(post);
         }
+
 
         // POST: Posts/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,BlogId")] Post post,
-                                                        IFormFile? imageFile)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,BlogId")] Post post, IFormFile? imageFile)
         {
             if (id != post.Id)
             {
@@ -96,12 +103,15 @@ namespace BlogApp.Controllers
 
             if (ModelState.IsValid)
             {
+                // Jeśli użytkownik dodał obrazek, przetwarzamy go
                 if (imageFile != null && imageFile.Length > 0)
                 {
                     post.ImagePath = await ProcessImage(imageFile);
                 }
+
                 try
                 {
+                    // Aktualizujemy post w bazie danych
                     _context.Update(post);
                     await _context.SaveChangesAsync();
                 }
@@ -116,8 +126,11 @@ namespace BlogApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+
+                // Po zapisaniu edytowanego posta przekierowujemy do szczegółów bloga
+                return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
             }
+
             return View(post);
         }
         
@@ -162,9 +175,17 @@ namespace BlogApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var post = await _context.Posts.FindAsync(id);
-            _context.Posts.Remove(post);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            if (post != null)
+            {
+                var blogId = post.BlogId;  // Pobieramy BlogId powiązane z postem
+                _context.Posts.Remove(post);
+                await _context.SaveChangesAsync();
+                
+                // Po usunięciu postu przekierowujemy do widoku Details bloga
+                return RedirectToAction("Details", "Blogs", new { id = blogId });
+            }
+
+            return NotFound();  // Jeśli post nie istnieje, zwróć NotFound
         }
         [HttpPost]
         [Authorize]
