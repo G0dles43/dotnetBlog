@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj": {}
+    "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj": {
+    "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
+        "projectUniqueName": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj",
         "projectName": "BlogApp",
-        "projectPath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
+        "projectPath": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\BlogApp.csproj",
         "packagesPath": "C:\\Users\\barte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\",
+        "outputPath": "C:\\Users\\barte\\Desktop\\programowanie\\blogapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\barte\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -69,6 +69,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "SixLabors.ImageSharp": {
               "target": "Package",

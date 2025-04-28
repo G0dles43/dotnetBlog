@@ -38,5 +38,5 @@ body {
 .fixed-image {
   width: 500px;
   height: 300px;
-  object-fit: cover; /* Aby obraz wypełniał obszar bez deformacji */
+  object-fit: cover;
 }

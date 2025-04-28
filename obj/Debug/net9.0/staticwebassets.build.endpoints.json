@@ -8832,13 +8832,174 @@
       ]
     },
     {
+      "Route": "css/site.4pp1iib4r0.css",
+      "AssetFile": "css/site.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002816901408"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "354"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1zmkLmfk/1wZwzXJ/8M0xbj5FAZ92nenOjNM8jWtbdA=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"WMJHAVlftOsR1xxxeH54vCLI3XswZMyaEn7YtxkGEBA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 06:25:58 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4pp1iib4r0"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WMJHAVlftOsR1xxxeH54vCLI3XswZMyaEn7YtxkGEBA="
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/site.4pp1iib4r0.css",
+      "AssetFile": "css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "751"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WMJHAVlftOsR1xxxeH54vCLI3XswZMyaEn7YtxkGEBA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 06:25:58 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4pp1iib4r0"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WMJHAVlftOsR1xxxeH54vCLI3XswZMyaEn7YtxkGEBA="
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/site.4pp1iib4r0.css.gz",
+      "AssetFile": "css/site.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "354"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"1zmkLmfk/1wZwzXJ/8M0xbj5FAZ92nenOjNM8jWtbdA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 06:25:58 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4pp1iib4r0"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-1zmkLmfk/1wZwzXJ/8M0xbj5FAZ92nenOjNM8jWtbdA="
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css.gz"
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "css/site.css.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.002506265664"
+          "Quality": "0.002816901408"
         }
       ],
       "ResponseHeaders": [
@@ -8856,7 +9017,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "398"
+          "Value": "354"
         },
         {
           "Name": "Content-Type",
@@ -8864,15 +9025,15 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/ykydZcnUlBhdoqdiq2DZRcpcVF3O2PW5vbV23cO6fw=\""
+          "Value": "\"1zmkLmfk/1wZwzXJ/8M0xbj5FAZ92nenOjNM8jWtbdA=\""
         },
         {
           "Name": "ETag",
-          "Value": "W/\"b0svL3ykzD0apObFMT143aYmg55Vfg1vhrLm0JoWn1A=\""
+          "Value": "W/\"WMJHAVlftOsR1xxxeH54vCLI3XswZMyaEn7YtxkGEBA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 22:26:24 GMT"
+          "Value": "Mon, 28 Apr 2025 06:25:58 GMT"
         },
         {
           "Name": "Vary",
@@ -8882,7 +9043,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-b0svL3ykzD0apObFMT143aYmg55Vfg1vhrLm0JoWn1A="
+          "Value": "sha256-WMJHAVlftOsR1xxxeH54vCLI3XswZMyaEn7YtxkGEBA="
         }
       ]
     },
@@ -8901,7 +9062,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "801"
+          "Value": "751"
         },
         {
           "Name": "Content-Type",
@@ -8909,17 +9070,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"b0svL3ykzD0apObFMT143aYmg55Vfg1vhrLm0JoWn1A=\""
+          "Value": "\"WMJHAVlftOsR1xxxeH54vCLI3XswZMyaEn7YtxkGEBA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 22:26:24 GMT"
+          "Value": "Mon, 28 Apr 2025 06:25:58 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-b0svL3ykzD0apObFMT143aYmg55Vfg1vhrLm0JoWn1A="
+          "Value": "sha256-WMJHAVlftOsR1xxxeH54vCLI3XswZMyaEn7YtxkGEBA="
         }
       ]
     },
@@ -8942,7 +9103,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "398"
+          "Value": "354"
         },
         {
           "Name": "Content-Type",
@@ -8950,11 +9111,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/ykydZcnUlBhdoqdiq2DZRcpcVF3O2PW5vbV23cO6fw=\""
+          "Value": "\"1zmkLmfk/1wZwzXJ/8M0xbj5FAZ92nenOjNM8jWtbdA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 22:26:24 GMT"
+          "Value": "Mon, 28 Apr 2025 06:25:58 GMT"
         },
         {
           "Name": "Vary",
@@ -8964,168 +9125,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/ykydZcnUlBhdoqdiq2DZRcpcVF3O2PW5vbV23cO6fw="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.j33vqs6aw3.css",
-      "AssetFile": "css/site.css.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.002506265664"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "398"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/ykydZcnUlBhdoqdiq2DZRcpcVF3O2PW5vbV23cO6fw=\""
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"b0svL3ykzD0apObFMT143aYmg55Vfg1vhrLm0JoWn1A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 22:26:24 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "j33vqs6aw3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-b0svL3ykzD0apObFMT143aYmg55Vfg1vhrLm0JoWn1A="
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        }
-      ]
-    },
-    {
-      "Route": "css/site.j33vqs6aw3.css",
-      "AssetFile": "css/site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "801"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"b0svL3ykzD0apObFMT143aYmg55Vfg1vhrLm0JoWn1A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 22:26:24 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "j33vqs6aw3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-b0svL3ykzD0apObFMT143aYmg55Vfg1vhrLm0JoWn1A="
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        }
-      ]
-    },
-    {
-      "Route": "css/site.j33vqs6aw3.css.gz",
-      "AssetFile": "css/site.css.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "398"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"/ykydZcnUlBhdoqdiq2DZRcpcVF3O2PW5vbV23cO6fw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 27 Apr 2025 22:26:24 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "j33vqs6aw3"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-/ykydZcnUlBhdoqdiq2DZRcpcVF3O2PW5vbV23cO6fw="
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css.gz"
+          "Value": "sha256-1zmkLmfk/1wZwzXJ/8M0xbj5FAZ92nenOjNM8jWtbdA="
         }
       ]
     },
@@ -27386,6 +27386,88 @@
         {
           "Name": "label",
           "Value": "lib/jquery/dist/jquery.slim.min.js.gz"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.8fp8lbdhu6.webp",
+      "AssetFile": "uploads/3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70374"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"THx+AQBd66Sq4CK2Qic0VG4Owe6ZDWN+shScvJLL3F0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 06:41:34 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8fp8lbdhu6"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-THx+AQBd66Sq4CK2Qic0VG4Owe6ZDWN+shScvJLL3F0="
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp"
+        }
+      ]
+    },
+    {
+      "Route": "uploads/3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp",
+      "AssetFile": "uploads/3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70374"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"THx+AQBd66Sq4CK2Qic0VG4Owe6ZDWN+shScvJLL3F0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 06:41:34 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-THx+AQBd66Sq4CK2Qic0VG4Owe6ZDWN+shScvJLL3F0="
         }
       ]
     },

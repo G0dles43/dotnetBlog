@@ -10,7 +10,7 @@
     @if (!string.IsNullOrEmpty(Model.ImagePath))
     {
         <div class="mb-4">
-            <img src="@Model.ImagePath" class="fixed-image" alt="Post image" />
+            <img src="@Model.ImagePath" alt="Post image" />
         </div>
     }
 
@@ -35,7 +35,7 @@
                     </div>
                 }
                 <br/>
-                <small class="text-muted">by @c.UserId on @c.CreatedAt.ToString("g")</small>
+                <small class="text-muted">by @c.UserId ona @c.CreatedAt.ToString("g")</small>
             </li>
         }
         </ul>
