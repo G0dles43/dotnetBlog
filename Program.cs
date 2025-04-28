@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using BlogApp.Data;
 using Microsoft.Extensions.FileProviders;
-using BlogApp.Areas.Identity.Data;
+using BlogApp.Areas.Identity;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
