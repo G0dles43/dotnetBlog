@@ -1,0 +1,25 @@
+@model BlogApp.Models.Comment
+@{
+    ViewData["Title"] = "Edit Comment";
+}
+
+<div class="container py-4">
+    <h1>@ViewData["Title"]</h1>
+
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <input type="hidden" name="postId" value="@Model.PostId" />
+
+        <div class="mb-3">
+            <textarea name="content" class="form-control" rows="3" placeholder="Your comment">@Model.Content</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Add image (optional)</label>
+            <input type="file" name="imageFile" class="form-control" accept="image/*" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Comment</button>
+        <a asp-action="Details" asp-controller="Posts" asp-route-id="@Model.PostId" class="btn btn-secondary">Back to Post</a>
+    </form>
+</div>
