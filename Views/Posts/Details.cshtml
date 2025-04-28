@@ -10,12 +10,12 @@
     @if (!string.IsNullOrEmpty(Model.ImagePath))
     {
         <div class="mb-4">
-            <img src="@Model.ImagePath" alt="Post image" />
+            <img src="@Model.ImagePath" alt="Post image" class="img-fluid" />
         </div>
     }
 
     <div class="mb-5">
-        @Html.Raw(Model.Content.Replace("\n","<br/>"))
+        @Html.Raw(Model.Content.Replace("\n", "<br/>"))
         <div class="mt-3 vote-buttons">
             <button class="btn btn-sm btn-outline-success vote-btn" data-id="@Model.Id" data-is-upvote="true">
                 <i class="bi bi-hand-thumbs-up"></i> <span class="count">@Model.Likes</span>
@@ -25,6 +25,7 @@
             </button>
         </div>
     </div>
+
     <h3>Comments</h3>
     @if (!Model.Comments.Any())
     {
@@ -33,30 +34,36 @@
     else
     {
         <ul class="list-group mb-4">
-        @foreach(var c in Model.Comments) 
-        {
-            <li class="list-group-item">
-                @c.Content
-                @if (!string.IsNullOrEmpty(c.ImagePath))
-                {
-                    <div class="mt-2">
-                        <img src="@c.ImagePath" class="fixed-image" alt="Comment image" />
-                    </div>
-                }
-                <br/>
-                <small class="text-muted">by @c.UserId on @c.CreatedAt.ToString("g")</small>
-                <div class="mt-2 vote-buttons">
-                <button class="btn btn-xs btn-outline-success comment-vote" 
-                        data-id="@c.Id" data-is-upvote="true">
-                    <i class="bi bi-hand-thumbs-up"></i> <span class="count">@c.Likes</span>
-                </button>
-                <button class="btn btn-xs btn-outline-danger comment-vote" 
-                        data-id="@c.Id" data-is-upvote="false">
-                    <i class="bi bi-hand-thumbs-down"></i> <span class="count">@c.Dislikes</span>
-                </button>
-                </div>
-            </li>
-        }
+            @foreach (var c in Model.Comments)
+            {
+                <li class="list-group-item">
+                    <div>@c.Content</div>
+
+                    @if (!string.IsNullOrEmpty(c.ImagePath))
+                    {
+                        <div class="mt-2">
+                            <img src="@c.ImagePath" class="fixed-image" alt="Comment image" />
+                        </div>
+                    }
+
+                    <br />
+                    <small class="text-muted">by @c.UserId on @c.CreatedAt.ToString("g")</small>
+
+                    <div class="mt-2 vote-buttons">
+                        <button class="btn btn-xs btn-outline-success comment-vote"
+                                data-id="@c.Id" data-is-upvote="true">
+                            <i class="bi bi-hand-thumbs-up"></i> <span class="count">@c.Likes</span>
+                        </button>
+                        <button class="btn btn-xs btn-outline-danger comment-vote"
+                                data-id="@c.Id" data-is-upvote="false">
+                            <i class="bi bi-hand-thumbs-down"></i> <span class="count">@c.Dislikes</span>
+                        </button>
+                         <br />
+                         <br />
+                        <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-warning btn-sm ml-2">Edit</a>
+                        <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-danger btn-sm ml-2">Delete</a>                    </div>
+                </li>
+            }
         </ul>
     }
 
@@ -74,7 +81,6 @@
     </form>
 </div>
 
-<!-- Zmiana w sekcji Scripts -->
 @section Scripts {
     <script>
         // Funkcja głosowania dla postów

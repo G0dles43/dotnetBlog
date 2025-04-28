@@ -50,5 +50,87 @@ namespace BlogApp.Controllers
 
             return "/uploads/" + uniqueFileName;
         }
+
+        // GET: Comments/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var comment = await _context.Comments.FindAsync(id);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            return View(comment);
+        }
+
+        // POST: Comments/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, string content, IFormFile? imageFile)
+        {
+            var comment = await _context.Comments.FindAsync(id);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                comment.Content = content;
+
+                // Przetwórz obrazek, jeśli został dodany
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    comment.ImagePath = await ProcessImage(imageFile);
+                }
+
+                _context.Update(comment);
+                await _context.SaveChangesAsync();
+
+                // Po edycji przekieruj do szczegółów posta
+                return RedirectToAction("Details", "Posts", new { id = comment.PostId });
+            }
+
+            return View(comment);
+        }
+
+        // GET: Comments/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var comment = await _context.Comments
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (comment == null)
+            {
+                return NotFound();
+            }
+
+            return View(comment);
+        }
+        
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var comment = await _context.Comments.FindAsync(id);
+            if (comment != null)
+            {
+                var postId = comment.PostId;
+                _context.Comments.Remove(comment);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Details", "Posts", new { id = postId });
+            }
+            return NotFound();
+        }
+        
     }
 }

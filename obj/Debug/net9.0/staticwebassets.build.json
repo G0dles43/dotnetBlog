@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RdOSuwUfnyzoE7jW09mIvbUGrPq2HKh5Hm4t7fVFHFM=",
+  "Hash": "8qRShKXq+UL1fkA4rRBqlpxiAn+PvPJtJQOgF81NDaM=",
   "Source": "BlogApp",
   "BasePath": "_content/BlogApp",
   "Mode": "Default",
@@ -5517,6 +5517,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\d6ba8ed3-4470-4028-806a-d26aadcfd019_413297596_356197690502736_5906773763697615513_n.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d91bc412-4a69-4349-b266-9c11e973b99d_405903783_378688891499756_4875040796603786738_n.jpg",
+      "SourceId": "BlogApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\",
+      "BasePath": "_content/BlogApp",
+      "RelativePath": "uploads/d91bc412-4a69-4349-b266-9c11e973b99d_405903783_378688891499756_4875040796603786738_n#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m4afa9izm1",
+      "Integrity": "Bs9Wa+3rXN51uKacWI4B1qP4XGcet4iNNLJhEsyGRFg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\d91bc412-4a69-4349-b266-9c11e973b99d_405903783_378688891499756_4875040796603786738_n.jpg"
     },
     {
       "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg",
@@ -36210,6 +36231,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-2QSyHnggJdsw51APvMGwlz8W6f3HUSFSrGTeyLeXtbI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/d91bc412-4a69-4349-b266-9c11e973b99d_405903783_378688891499756_4875040796603786738_n.jpg",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d91bc412-4a69-4349-b266-9c11e973b99d_405903783_378688891499756_4875040796603786738_n.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42887"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Bs9Wa+3rXN51uKacWI4B1qP4XGcet4iNNLJhEsyGRFg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:11:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Bs9Wa+3rXN51uKacWI4B1qP4XGcet4iNNLJhEsyGRFg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/d91bc412-4a69-4349-b266-9c11e973b99d_405903783_378688891499756_4875040796603786738_n.m4afa9izm1.jpg",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d91bc412-4a69-4349-b266-9c11e973b99d_405903783_378688891499756_4875040796603786738_n.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42887"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Bs9Wa+3rXN51uKacWI4B1qP4XGcet4iNNLJhEsyGRFg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 11:11:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m4afa9izm1"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/d91bc412-4a69-4349-b266-9c11e973b99d_405903783_378688891499756_4875040796603786738_n.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Bs9Wa+3rXN51uKacWI4B1qP4XGcet4iNNLJhEsyGRFg="
         }
       ]
     },
