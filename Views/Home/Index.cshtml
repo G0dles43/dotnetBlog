@@ -10,23 +10,6 @@
     <div class="text-center">
         <h1>Welcome to BlogApp</h1>
 
-        @if (!SignInManager.IsSignedIn(User))
-        {
-            <p>
-                <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-primary me-2">Login</a>
-                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-secondary">Register</a>
-            </p>
-        }
-        else
-        {
-            <p>
-                Hello, @User.Identity.Name!
-                <form asp-area="Identity" asp-page="/Account/Logout" method="post" class="d-inline">
-                    <button type="submit" class="btn btn-link">Logout</button>
-                </form>
-            </p>
-        }
-
         <p class="mt-4">
             <a asp-controller="Blogs" asp-action="Index" class="btn btn-lg btn-primary">
                 See all blogs

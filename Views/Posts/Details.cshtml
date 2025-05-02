@@ -10,7 +10,8 @@
     @if (!string.IsNullOrEmpty(Model.ImagePath))
     {
         <div class="mb-4">
-            <img src="@Model.ImagePath" alt="Post image" class="img-fluid" />
+            <p>Ścieżka do obrazka: @Model.ImagePath</p>
+            <img src="@Model.ImagePath" alt="Post image test" style="width:300px;" />
         </div>
     }
 

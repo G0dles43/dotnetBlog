@@ -55,18 +55,25 @@ namespace BlogApp.Controllers
         }
 
         // POST: Posts/Create
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Content,BlogId")] Post post)
+        public async Task<IActionResult> Create([Bind("Title,Content,BlogId")] Post post, IFormFile? imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    post.ImagePath = await ProcessImage(imageFile);  
+                }
+
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
             }
             return View(post);
         }
+
 
         // GET: Posts/Edit/5
         // GET: Posts/Edit/5
@@ -139,18 +146,22 @@ namespace BlogApp.Controllers
             var uploadsFolder = Path.Combine("wwwroot", "uploads");
             Directory.CreateDirectory(uploadsFolder);
             
-            var uniqueFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
+            var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(imageFile.FileName)}";
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
             using (var image = await Image.LoadAsync(imageFile.OpenReadStream()))
             {
-                image.Mutate(x => x.Resize(800, 600)); // Wymiary 800x600 px
+                image.Mutate(x => x.Resize(new ResizeOptions
+                {
+                    Size = new Size(800, 600),
+                    Mode = ResizeMode.Max
+                }));
+                
                 await image.SaveAsync(filePath);
             }
 
-            return "/uploads/" + uniqueFileName;
+            return $"/uploads/{uniqueFileName}";
         }
-
         // GET: Posts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
