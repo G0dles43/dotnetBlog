@@ -48,7 +48,7 @@
                     }
 
                     <br />
-                    <small class="text-muted">by @c.UserId on @c.CreatedAt.ToString("g")</small>
+                    <small class="text-muted">by @c.User.UserName on @c.CreatedAt.ToString("g")</small> <!-- Użycie UserName -->
 
                     <div class="mt-2 vote-buttons">
                         <button class="btn btn-xs btn-outline-success comment-vote"
@@ -62,7 +62,8 @@
                          <br />
                          <br />
                         <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-warning btn-sm ml-2">Edit</a>
-                        <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-danger btn-sm ml-2">Delete</a>                    </div>
+                        <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-danger btn-sm ml-2">Delete</a>                    
+                    </div>
                 </li>
             }
         </ul>

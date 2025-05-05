@@ -21,20 +21,24 @@ namespace BlogApp.Controllers
         {
             _context = context;
         }
-         public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
+
             var post = await _context.Posts
                 .Include(p => p.Comments)
+                    .ThenInclude(c => c.User)  // Ładujemy dane użytkownika powiązane z komentarzami
                 .FirstOrDefaultAsync(p => p.Id == id);
+
             if (post == null) return NotFound();
 
-            // opcjonalnie zwiększ licznik wyświetleń
+            // Opcjonalnie zwiększ licznik wyświetleń
             post.ViewCount++;
             await _context.SaveChangesAsync();
 
             return View(post);
         }
+
 
         // GET: Posts
         public async Task<IActionResult> Index()

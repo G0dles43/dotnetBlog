@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using BlogApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace BlogApp.Models
 {
@@ -13,6 +14,7 @@ namespace BlogApp.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public string UserId { get; set; } = string.Empty; // Autor komentarza
+        public IdentityUser User { get; set; }
 
         public int PostId { get; set; } // Powiązanie z postem
         public Post Post { get; set; } = null!;

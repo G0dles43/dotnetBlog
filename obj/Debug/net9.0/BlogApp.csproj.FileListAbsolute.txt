@@ -419,7 +419,6 @@ C:\Users\barte\Desktop\programowanie\blogapp\bin\Debug\net9.0\appsettings.Develo
 C:\Users\barte\Desktop\programowanie\blogapp\bin\Debug\net9.0\appsettings.json
 C:\Users\barte\Desktop\programowanie\blogapp\bin\Debug\net9.0\BlogApp.staticwebassets.runtime.json
 C:\Users\barte\Desktop\programowanie\blogapp\bin\Debug\net9.0\BlogApp.staticwebassets.endpoints.json
-C:\Users\barte\Desktop\programowanie\blogapp\bin\Debug\net9.0\app.db
 C:\Users\barte\Desktop\programowanie\blogapp\bin\Debug\net9.0\BlogApp.exe
 C:\Users\barte\Desktop\programowanie\blogapp\bin\Debug\net9.0\BlogApp.deps.json
 C:\Users\barte\Desktop\programowanie\blogapp\bin\Debug\net9.0\BlogApp.runtimeconfig.json
@@ -1293,3 +1292,4 @@ C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\runtimes\win-x86\n
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\runtimes\win-x86\native\libstdc++-6.dll
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
+C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\app.db

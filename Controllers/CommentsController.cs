@@ -20,20 +20,25 @@ namespace BlogApp.Controllers
         public async Task<IActionResult> Create(int postId, string content, IFormFile? imageFile)
         {
             if (string.IsNullOrWhiteSpace(content)) return RedirectToAction("Details", "Posts", new { id = postId });
-            
-            var comment = new Comment {
+
+            var comment = new Comment
+            {
                 PostId = postId,
                 Content = content,
-                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) // Pobieramy UserId
             };
+
             if (imageFile != null && imageFile.Length > 0)
             {
-                comment.ImagePath = await ProcessImage(imageFile); // Użyj tej samej metody co wyżej
+                comment.ImagePath = await ProcessImage(imageFile);
             }
+
             _context.Comments.Add(comment);
             await _context.SaveChangesAsync();
+
             return RedirectToAction("Details", "Posts", new { id = postId });
         }
+
         private async Task<string> ProcessImage(IFormFile imageFile)
         {
             var uploadsFolder = Path.Combine("wwwroot", "uploads");
