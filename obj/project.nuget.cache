@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MWR22HKwENw=",
+  "dgSpecHash": "+FP8dnU/p8k=",
   "success": true,
-  "projectFilePath": "C:\\Users\\barte\\Desktop\\programowanie\\dotnetBlog\\BlogApp.csproj",
+  "projectFilePath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\barte\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -120,6 +120,7 @@
     "C:\\Users\\barte\\.nuget\\packages\\nuget.projectmodel\\6.11.0\\nuget.projectmodel.6.11.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\questpdf\\2025.4.2\\questpdf.2025.4.2.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\sixlabors.imagesharp\\3.1.8\\sixlabors.imagesharp.3.1.8.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.10\\sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",
     "C:\\Users\\barte\\.nuget\\packages\\sqlitepclraw.core\\2.1.10\\sqlitepclraw.core.2.1.10.nupkg.sha512",

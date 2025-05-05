@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barte\\Desktop\\programowanie\\dotnetBlog\\BlogApp.csproj": {}
+    "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barte\\Desktop\\programowanie\\dotnetBlog\\BlogApp.csproj": {
+    "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barte\\Desktop\\programowanie\\dotnetBlog\\BlogApp.csproj",
+        "projectUniqueName": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
         "projectName": "BlogApp",
-        "projectPath": "C:\\Users\\barte\\Desktop\\programowanie\\dotnetBlog\\BlogApp.csproj",
+        "projectPath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
         "packagesPath": "C:\\Users\\barte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barte\\Desktop\\programowanie\\dotnetBlog\\obj\\",
+        "outputPath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\barte\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -73,6 +73,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2025.4.2, )"
             },
             "SixLabors.ImageSharp": {
               "target": "Package",
