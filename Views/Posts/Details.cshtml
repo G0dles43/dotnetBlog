@@ -1,3 +1,5 @@
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
 @model BlogApp.Models.Post
 @{
     ViewData["Title"] = Model.Title;
@@ -61,8 +63,14 @@
                         </button>
                          <br />
                          <br />
-                        <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-warning btn-sm ml-2">Edit</a>
-                        <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-danger btn-sm ml-2">Delete</a>                    
+                         @if (Model.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
+                     {
+                            <span class="float-end">
+                                <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-warning btn-sm">Edit</a>
+                                <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-danger btn-sm">Delete</a>
+                            </span>
+                        }
+                                           
                     </div>
                 </li>
             }
@@ -98,7 +106,6 @@
 
                     if (response.ok) {
                         const data = await response.json();
-                        // Aktualizuj oba liczniki
                         const container = this.closest('.vote-buttons');
                         container.querySelector('.btn-outline-success .count').textContent = data.likes;
                         container.querySelector('.btn-outline-danger .count').textContent = data.dislikes;

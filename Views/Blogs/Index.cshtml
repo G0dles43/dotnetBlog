@@ -1,5 +1,6 @@
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
 @model IEnumerable<BlogApp.Models.Blog>
-
 @{
   ViewData["Title"] = "All Blogs";
 }
@@ -15,10 +16,15 @@
     @foreach(var b in Model) {
       <li class="list-group-item">
         <a asp-action="Details" asp-route-id="@b.Id">@b.Title</a>
-        <span>
-          <a asp-action="Edit"    asp-route-id="@b.Id">Edit</a> |
-          <a asp-action="Delete"  asp-route-id="@b.Id">Delete</a>
-        </span>
+
+          @if (b.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
+          {
+              <span>
+                  <a asp-action="Edit" asp-route-id="@b.Id" class="btn btn-warning btn-sm">Edit</a> |
+                  <a asp-action="Delete" asp-route-id="@b.Id" class="btn btn-danger btn-sm">Delete</a>
+              </span>
+          }
+
       </li>
     }
   </ul>
