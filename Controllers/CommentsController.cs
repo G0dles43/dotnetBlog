@@ -59,16 +59,12 @@ namespace BlogApp.Controllers
         // GET: Comments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var comment = await _context.Comments.FindAsync(id);
-            if (comment == null)
-            {
-                return NotFound();
-            }
+            if (comment == null) return NotFound();
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (comment.UserId != userId && !User.IsInRole("Admin"))
+                return Forbid();
 
             return View(comment);
         }
@@ -79,10 +75,12 @@ namespace BlogApp.Controllers
         public async Task<IActionResult> Edit(int id, string content, IFormFile? imageFile)
         {
             var comment = await _context.Comments.FindAsync(id);
-            if (comment == null)
-            {
-                return NotFound();
-            }
+            if (comment == null) return NotFound();
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (comment.UserId != userId && !User.IsInRole("Admin"))
+                return Forbid();
+
 
             if (ModelState.IsValid)
             {
@@ -114,6 +112,9 @@ namespace BlogApp.Controllers
 
             var comment = await _context.Comments
                 .FirstOrDefaultAsync(m => m.Id == id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (comment == null || (comment.UserId != userId && !User.IsInRole("Admin")))
+    return Forbid();
             if (comment == null)
             {
                 return NotFound();

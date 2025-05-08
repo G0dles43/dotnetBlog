@@ -107,6 +107,10 @@ namespace BlogApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("ViewCount")
                         .HasColumnType("INTEGER");
 

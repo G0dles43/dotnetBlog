@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using BlogApp.Data;
 using BlogApp.Models;
+using System.Security.Claims;
 
 
 namespace BlogApp.Controllers
@@ -37,6 +38,7 @@ namespace BlogApp.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(blog);
+                blog.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -52,10 +54,10 @@ namespace BlogApp.Controllers
             }
 
             var blog = await _context.Blogs.FindAsync(id);
-            if (blog == null)
-            {
-                return NotFound();
-            }
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (blog == null || (blog.UserId != userId && !User.IsInRole("Admin")))
+                return Forbid();
+           
             return View(blog);
         }
 
@@ -102,6 +104,7 @@ namespace BlogApp.Controllers
 
             var blog = await _context.Blogs
                 .FirstOrDefaultAsync(m => m.Id == id);
+                
             if (blog == null)
             {
                 return NotFound();
@@ -116,6 +119,9 @@ namespace BlogApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var blog = await _context.Blogs.FindAsync(id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (blog == null || (blog.UserId != userId && !User.IsInRole("Admin")))
+                return Forbid();
             _context.Blogs.Remove(blog);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

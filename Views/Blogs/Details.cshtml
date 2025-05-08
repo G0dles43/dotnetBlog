@@ -1,3 +1,5 @@
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
 @model BlogApp.Models.Blog
 @{
     ViewData["Title"] = Model.Title;
@@ -19,10 +21,13 @@
             {
                 <li class="list-group-item">
                     <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id">@post.Title</a>
+                    @if (Model.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
+                    {
                     <span class="float-end">
                         <a asp-controller="Posts" asp-action="Edit" asp-route-id="@post.Id" class="btn btn-warning btn-sm">Edit</a>
                         <a asp-controller="Posts" asp-action="Delete" asp-route-id="@post.Id" class="btn btn-danger btn-sm">Delete</a>
                     </span>
+                    }
                 </li>
             }
         </ul>

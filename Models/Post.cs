@@ -13,7 +13,8 @@ namespace BlogApp.Models
         public int ViewCount { get; set; } = 0;
         public int Likes { get; set; } = 0;
         public int Dislikes { get; set; } = 0;
-    public virtual ICollection<PostVote> Votes { get; set; } = new List<PostVote>();
+        public string UserId { get; set; } = string.Empty;
+        public virtual ICollection<PostVote> Votes { get; set; } = new List<PostVote>();
         public string? ImagePath { get; set; }
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }

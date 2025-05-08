@@ -70,7 +70,7 @@ namespace BlogApp.Controllers
                 {
                     post.ImagePath = await ProcessImage(imageFile);  
                 }
-
+                post.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 _context.Add(post);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
@@ -88,8 +88,9 @@ namespace BlogApp.Controllers
                 return NotFound();
             }
 
-            var post = await _context.Posts
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var post = await _context.Posts.FirstOrDefaultAsync(m => m.Id == id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             if (post == null)
             {
                 return NotFound();
@@ -190,6 +191,10 @@ namespace BlogApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var post = await _context.Posts.FindAsync(id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (post == null || (post.UserId != userId && !User.IsInRole("Admin")))
+                return Forbid();
+
             if (post != null)
             {
                 var blogId = post.BlogId;  // Pobieramy BlogId powiązane z postem
