@@ -6,13 +6,15 @@
 }
 
 <div class="container py-4">
+    <div class="mt-4"></div>
+        <a asp-controller="Blogs" asp-action="Details" asp-route-id="@Model.BlogId" class="btn btn-secondary">Back to Posts</a>
+    </div>
     <h1>@Model.Title</h1>
     <p class="text-muted">Posted on @Model.CreatedAt.ToString("g") • Views: @Model.ViewCount</p>
 
     @if (!string.IsNullOrEmpty(Model.ImagePath))
     {
         <div class="mb-4">
-            <p>Ścieżka do obrazka: @Model.ImagePath</p>
             <img src="@Model.ImagePath" alt="Post image test" style="width:300px;" />
         </div>
     }
@@ -40,7 +42,10 @@
             @foreach (var c in Model.Comments)
             {
                 <li class="list-group-item dynamic-bg">
-                    <div>@c.Content</div>
+
+                    <small class="text-muted d-block" style="font-size: 1.3rem; font-weight: 600;"> @c.User.UserName - @c.CreatedAt.ToString("g")</small> 
+
+                    <div style="font-size: 1.1rem;">@c.Content</div>
 
                     @if (!string.IsNullOrEmpty(c.ImagePath))
                     {
@@ -50,7 +55,6 @@
                     }
 
                     <br />
-                    <small class="text-muted d-block">by @c.User.UserName on @c.CreatedAt.ToString("g")</small> <!-- Użycie UserName -->
 
                     <div class="mt-2 vote-buttons">
                         <button class="btn btn-xs btn-outline-success comment-vote"

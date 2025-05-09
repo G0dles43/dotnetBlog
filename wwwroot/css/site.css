@@ -1,12 +1,12 @@
 :root {
-  --bg-color: #ffffff;
-  --text-color: #212529;
-  --card-bg: #b8b6b6e7;
-  --border-color: #dee2e6;
-  --box-shadow-color: rgba(0, 0, 0, 0.1);
-  --link-hover: #0056b3;
-  --btn-hover: #e2e6ea;
-  --placeholder-color: #6c757d;
+  --bg-color: #e8f8f5;
+  --text-color: #2e4a52;
+  --card-bg: #d1f2eb;
+  --border-color: #b8e0db;
+  --box-shadow-color: rgba(0, 128, 128, 0.1);
+  --link-hover: #66bfbf;
+  --btn-hover: #c4edea;
+  --placeholder-color: #709ca7;
 }
 
 html.dark-mode {
@@ -61,7 +61,7 @@ body {
 
 .fixed-image {
   width: 100%;
-  max-width: 518px;
+  max-width: 900px;
   height: auto;
   object-fit: cover;
   border-radius: 0.5rem;
@@ -84,7 +84,7 @@ body {
 }
 
 .limited-width {
-  max-width: 600px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -137,7 +137,7 @@ body {
 
 /* Zmiana koloru dla text-muted w ciemnym trybie */
 html.dark-mode .text-muted {
-  color: #aaa !important;
+  color: #ffffff !important;
 }
 
 /* Przycisk głosowania */

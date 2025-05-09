@@ -1290,6 +1290,6 @@ C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\runtimes\win-x86\n
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
 C:\Users\barte\Desktop\programowanie\BlogApp\bin\Debug\net9.0\app.db
-C:\Users\barte\Desktop\programowanie\BlogApp\obj\Debug\net9.0\compressed\iqqv5inq0f-htc9qvsuaq.gz
-C:\Users\barte\Desktop\programowanie\BlogApp\obj\Debug\net9.0\compressed\ivhngtwmfa-htc9qvsuaq.gz
-C:\Users\barte\Desktop\programowanie\BlogApp\obj\Debug\net9.0\compressed\pn8uwchdow-3i0602qxta.gz
+C:\Users\barte\Desktop\programowanie\BlogApp\obj\Debug\net9.0\compressed\iqqv5inq0f-w0o0nuhdbn.gz
+C:\Users\barte\Desktop\programowanie\BlogApp\obj\Debug\net9.0\compressed\ivhngtwmfa-w0o0nuhdbn.gz
+C:\Users\barte\Desktop\programowanie\BlogApp\obj\Debug\net9.0\compressed\pn8uwchdow-l9hojdkff4.gz

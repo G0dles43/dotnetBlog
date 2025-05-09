@@ -6,9 +6,17 @@
 }
 
 <div class="container py-4">
+    <div class="mt-4"></div>
+        <a asp-action="Index" class="btn btn-secondary">Back to Blogs</a>
+    </div>
+    
     <h1>@Model.Title</h1>
     <p class="lead">@Model.Description</p>
 
+    <a asp-controller="Posts" asp-action="Create" asp-route-blogId="@Model.Id" class="btn btn-primary">
+        Create New Post
+    </a>
+   
     <h3>Posts</h3>
     @if (!Model.Posts.Any())
     {
@@ -38,13 +46,6 @@
         </ul>
     }
     
-    <div class="mt-4">
-        <a asp-controller="Posts" asp-action="Create" asp-route-blogId="@Model.Id" class="btn btn-primary">
-            Create New Post
-        </a>
-    </div>
   
-    <div class="mt-4">
-        <a asp-action="Index" class="btn btn-secondary">Back to Blogs</a>
-    </div>
+    
 </div>

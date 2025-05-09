@@ -103,48 +103,46 @@ namespace BlogApp.Controllers
         }
 
 
-        // POST: Posts/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,BlogId")] Post post, IFormFile? imageFile)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Content,BlogId,ImagePath")] Post updatedPost, IFormFile? imageFile)
         {
-            if (id != post.Id)
-            {
+            if (id != updatedPost.Id)
                 return NotFound();
-            }
 
-            if (ModelState.IsValid)
+            var postInDb = await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
+            if (postInDb == null)
+                return NotFound();
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (postInDb.UserId != userId && !User.IsInRole("Admin"))
+                return Forbid(); // zabezpieczenie
+
+            // Aktualizuj tylko edytowalne pola
+            postInDb.Title = updatedPost.Title;
+            postInDb.Content = updatedPost.Content;
+            postInDb.BlogId = updatedPost.BlogId;
+
+            if (imageFile != null && imageFile.Length > 0)
             {
-                // Jeśli użytkownik dodał obrazek, przetwarzamy go
-                if (imageFile != null && imageFile.Length > 0)
-                {
-                    post.ImagePath = await ProcessImage(imageFile);
-                }
-
-                try
-                {
-                    // Aktualizujemy post w bazie danych
-                    _context.Update(post);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.Posts.Any(e => e.Id == post.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-
-                // Po zapisaniu edytowanego posta przekierowujemy do szczegółów bloga
-                return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
+                postInDb.ImagePath = await ProcessImage(imageFile);
             }
 
-            return View(post);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!_context.Posts.Any(e => e.Id == updatedPost.Id))
+                    return NotFound();
+                else
+                    throw;
+            }
+
+            return RedirectToAction("Details", "Blogs", new { id = postInDb.BlogId });
         }
+
         
         private async Task<string> ProcessImage(IFormFile imageFile)
         {

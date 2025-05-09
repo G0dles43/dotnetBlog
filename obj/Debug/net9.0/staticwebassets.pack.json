@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BlogApp.htc9qvsuaq.bundle.scp.css"
+      "PackagePath": "staticwebassets\\BlogApp.w0o0nuhdbn.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\css\\site.css",
@@ -269,6 +269,10 @@
       "PackagePath": "staticwebassets\\uploads\\3424ecdb-e3e0-4fe9-becc-434145b7ead4_czarnuszka.png"
     },
     {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\37d68c46-5c9e-4eea-9198-b35f6c19a2ef_96633009-d1818000-1318-11eb-9f1d-7f914f4ccb16.gif",
+      "PackagePath": "staticwebassets\\uploads\\37d68c46-5c9e-4eea-9198-b35f6c19a2ef_96633009-d1818000-1318-11eb-9f1d-7f914f4ccb16.gif"
+    },
+    {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp",
       "PackagePath": "staticwebassets\\uploads\\3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp"
     },
@@ -277,12 +281,24 @@
       "PackagePath": "staticwebassets\\uploads\\3fff8735-f687-4a1a-930e-1b7eae72366a_405903783_378688891499756_4875040796603786738_n.jpg"
     },
     {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\67216e80-8bd1-4e8f-b40a-e75dd83d7511_405903783_378688891499756_4875040796603786738_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\67216e80-8bd1-4e8f-b40a-e75dd83d7511_405903783_378688891499756_4875040796603786738_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\69528913-3758-4f2a-92d1-1ce1fb8565ff.gif",
+      "PackagePath": "staticwebassets\\uploads\\69528913-3758-4f2a-92d1-1ce1fb8565ff.gif"
+    },
+    {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\6fdd0393-bd41-4ad6-9a1f-219aba8e03eb_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp",
       "PackagePath": "staticwebassets\\uploads\\6fdd0393-bd41-4ad6-9a1f-219aba8e03eb_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\7c366959-6713-4e0f-8c9b-b78f27f0cbfa_goofy.jpg",
       "PackagePath": "staticwebassets\\uploads\\7c366959-6713-4e0f-8c9b-b78f27f0cbfa_goofy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\9f7d75bb-c21b-45c4-9903-38ead95c514d.gif",
+      "PackagePath": "staticwebassets\\uploads\\9f7d75bb-c21b-45c4-9903-38ead95c514d.gif"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\a5aff330-2ee0-4152-8c39-201bc0804ad5_413297596_356197690502736_5906773763697615513_n.jpg",
@@ -297,12 +313,20 @@
       "PackagePath": "staticwebassets\\uploads\\b447de1f-201f-49df-a67f-72d96e1dd525_413297596_356197690502736_5906773763697615513_n.jpg"
     },
     {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\ba7dde33-f286-4cc4-a615-2e315826994a_2si0gxzhvb741.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ba7dde33-f286-4cc4-a615-2e315826994a_2si0gxzhvb741.jpg"
+    },
+    {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\bbd07566-86c0-47d3-9e86-e42c809fc2c8_8caaa1e2-61c2-4f88-847c-80d2ca427aae.jpg",
       "PackagePath": "staticwebassets\\uploads\\bbd07566-86c0-47d3-9e86-e42c809fc2c8_8caaa1e2-61c2-4f88-847c-80d2ca427aae.jpg"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\bc3977fc-e720-454a-b1dd-f020c333fde0.jpg",
       "PackagePath": "staticwebassets\\uploads\\bc3977fc-e720-454a-b1dd-f020c333fde0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\bcec5f85-3a85-499a-ae8f-eef142c5ef94.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bcec5f85-3a85-499a-ae8f-eef142c5ef94.jpg"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d002c65e-bc53-4540-9985-232d845411a6_730_1.jpg",
