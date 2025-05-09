@@ -14,18 +14,21 @@
 
   <ul class="list-group">
     @foreach(var b in Model) {
-      <li class="list-group-item">
-        <a asp-action="Details" asp-route-id="@b.Id">@b.Title</a>
+      <li class="list-group-item dynamic-bg d-flex justify-content-between align-items-center flex-wrap">
+        <div>
+            <a asp-action="Details" asp-route-id="@b.Id" class="dynamic-link">
+                @b.Title
+            </a>
+        </div>
 
-          @if (b.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
-          {
-              <span>
-                  <a asp-action="Edit" asp-route-id="@b.Id" class="btn btn-warning btn-sm">Edit</a> |
-                  <a asp-action="Delete" asp-route-id="@b.Id" class="btn btn-danger btn-sm">Delete</a>
-              </span>
-          }
-
-      </li>
+        @if (b.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
+        {
+            <div class="btn-group btn-group-sm mt-2 mt-md-0" role="group">
+                <a asp-action="Edit" asp-route-id="@b.Id" class="btn btn-outline-warning btn-sm">Edit</a>
+                <a asp-action="Delete" asp-route-id="@b.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+            </div>
+        }
+    </li>
     }
   </ul>
 </div>

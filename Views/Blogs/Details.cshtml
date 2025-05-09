@@ -16,17 +16,22 @@
     }
     else
     {
-        <ul class="list-group">
+       <ul class="list-group">
             @foreach (var post in Model.Posts)
             {
-                <li class="list-group-item">
-                    <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id">@post.Title</a>
-                    @if (Model.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
+                <li class="list-group-item dynamic-bg d-flex justify-content-between align-items-center flex-wrap">
+                    <div>
+                        <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id" class="dynamic-link">
+                            @post.Title
+                        </a>
+                    </div>
+
+                    @if (post.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
                     {
-                    <span class="float-end">
-                        <a asp-controller="Posts" asp-action="Edit" asp-route-id="@post.Id" class="btn btn-warning btn-sm">Edit</a>
-                        <a asp-controller="Posts" asp-action="Delete" asp-route-id="@post.Id" class="btn btn-danger btn-sm">Delete</a>
-                    </span>
+                        <div class="btn-group btn-group-sm mt-2 mt-md-0" role="group">
+                            <a asp-controller="Posts" asp-action="Edit" asp-route-id="@post.Id" class="btn btn-outline-warning">Edit</a>
+                            <a asp-controller="Posts" asp-action="Delete" asp-route-id="@post.Id" class="btn btn-outline-danger">Delete</a>
+                        </div>
                     }
                 </li>
             }

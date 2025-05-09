@@ -39,7 +39,7 @@
         <ul class="list-group mb-4 limited-width">
             @foreach (var c in Model.Comments)
             {
-                <li class="list-group-item">
+                <li class="list-group-item dynamic-bg">
                     <div>@c.Content</div>
 
                     @if (!string.IsNullOrEmpty(c.ImagePath))
@@ -50,7 +50,7 @@
                     }
 
                     <br />
-                    <small class="text-muted">by @c.User.UserName on @c.CreatedAt.ToString("g")</small> <!-- Użycie UserName -->
+                    <small class="text-muted d-block">by @c.User.UserName on @c.CreatedAt.ToString("g")</small> <!-- Użycie UserName -->
 
                     <div class="mt-2 vote-buttons">
                         <button class="btn btn-xs btn-outline-success comment-vote"
@@ -66,8 +66,8 @@
                          @if (Model.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
                      {
                             <span class="float-end">
-                                <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-warning btn-sm">Edit</a>
-                                <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-danger btn-sm">Delete</a>
+                                <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-outline-warning btn-sm">Edit</a>
+                                <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-outline-danger btn-sm">Delete</a>
                             </span>
                         }
                                            

@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BlogApp</title>
     <script type="importmap"></script>
+    <script>
+        (function () {
+            try {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BlogApp.styles.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -17,6 +28,9 @@
         <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BlogApp</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
+        </button>
+        <button id="themeToggle" class="btn btn-outline-secondary ms-3" title="Zmień motyw">
+            <i id="themeIcon" class="bi bi-brightness-high"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -44,5 +58,33 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const currentTheme = localStorage.getItem('theme');
+
+            function applyIcon(theme) {
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark-mode');
+                    themeIcon.classList.replace('bi-brightness-high', 'bi-moon');
+                } else {
+                    document.documentElement.classList.remove('dark-mode');
+                    themeIcon.classList.replace('bi-moon', 'bi-brightness-high');
+                }
+            }
+
+            applyIcon(currentTheme);
+
+            themeToggle?.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark-mode');
+                const newTheme = isDark ? 'dark' : 'light';
+                localStorage.setItem('theme', newTheme);
+                applyIcon(newTheme);
+            });
+        });
+    </script>
+
+
 </body>
 </html>

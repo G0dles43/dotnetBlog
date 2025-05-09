@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\BlogApp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BlogApp.w0o0nuhdbn.bundle.scp.css"
+      "PackagePath": "staticwebassets\\BlogApp.htc9qvsuaq.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\css\\site.css",
@@ -273,6 +273,10 @@
       "PackagePath": "staticwebassets\\uploads\\3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp"
     },
     {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\3fff8735-f687-4a1a-930e-1b7eae72366a_405903783_378688891499756_4875040796603786738_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3fff8735-f687-4a1a-930e-1b7eae72366a_405903783_378688891499756_4875040796603786738_n.jpg"
+    },
+    {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\6fdd0393-bd41-4ad6-9a1f-219aba8e03eb_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp",
       "PackagePath": "staticwebassets\\uploads\\6fdd0393-bd41-4ad6-9a1f-219aba8e03eb_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp"
     },
@@ -303,6 +307,10 @@
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d002c65e-bc53-4540-9985-232d845411a6_730_1.jpg",
       "PackagePath": "staticwebassets\\uploads\\d002c65e-bc53-4540-9985-232d845411a6_730_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d0a1a6c3-23a3-4c16-a457-97b3296d42af_403415214_1100301921335687_8728654510969962949_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d0a1a6c3-23a3-4c16-a457-97b3296d42af_403415214_1100301921335687_8728654510969962949_n.jpg"
     },
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d6ba8ed3-4470-4028-806a-d26aadcfd019_413297596_356197690502736_5906773763697615513_n.jpg",

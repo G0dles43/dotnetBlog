@@ -68,3 +68,19 @@ button.accept-policy:hover {
   margin-top: 10px;
   font-style: italic;
 }
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}

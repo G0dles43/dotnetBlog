@@ -1,22 +1,22 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BlogApp.w0o0nuhdbn.bundle.scp.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BlogApp.htc9qvsuaq.bundle.scp.css'))">
       <SourceType>Package</SourceType>
       <SourceId>BlogApp</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/BlogApp</BasePath>
-      <RelativePath>BlogApp.w0o0nuhdbn.bundle.scp.css</RelativePath>
+      <RelativePath>BlogApp.htc9qvsuaq.bundle.scp.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>Reference</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ProjectBundle</AssetTraitValue>
-      <Fingerprint>w0o0nuhdbn</Fingerprint>
-      <Integrity>oHhdMCQOMx0DDcnppiquaGiT4Ys2jdFTRvufV0PZE48=</Integrity>
+      <Fingerprint>htc9qvsuaq</Fingerprint>
+      <Integrity>2+CRjJPdLnPIk4xZZpqrEOFR+btp/FEXGMuAUHfIZQ0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BlogApp.w0o0nuhdbn.bundle.scp.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\BlogApp.htc9qvsuaq.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))">
       <SourceType>Package</SourceType>
@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>6owretgeky</Fingerprint>
-      <Integrity>JsCDhdIKMfAaGuLsVasktmXAvHNOl70I2j2YszAdY84=</Integrity>
+      <Fingerprint>3i0602qxta</Fingerprint>
+      <Integrity>C3Ccwe3AjFxGTbk8OJHuFK4cHETxwzsCuUa7MqpOCPs=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</OriginalItemSpec>
@@ -1224,6 +1224,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3a8ee28e-6d9e-4913-b93d-e630e1ce4258_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3fff8735-f687-4a1a-930e-1b7eae72366a_405903783_378688891499756_4875040796603786738_n.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>BlogApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BlogApp</BasePath>
+      <RelativePath>uploads/3fff8735-f687-4a1a-930e-1b7eae72366a_405903783_378688891499756_4875040796603786738_n.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>m4afa9izm1</Fingerprint>
+      <Integrity>Bs9Wa+3rXN51uKacWI4B1qP4XGcet4iNNLJhEsyGRFg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\3fff8735-f687-4a1a-930e-1b7eae72366a_405903783_378688891499756_4875040796603786738_n.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\6fdd0393-bd41-4ad6-9a1f-219aba8e03eb_DALL·E 2025-02-22 00.57.37 - A bold and edgy esports team logo featuring a stylized bison with glowing red eyes, smoke swirling around its head, and a vodka bottle in its grip. Th.webp'))">
       <SourceType>Package</SourceType>
       <SourceId>BlogApp</SourceId>
@@ -1367,6 +1385,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d002c65e-bc53-4540-9985-232d845411a6_730_1.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d0a1a6c3-23a3-4c16-a457-97b3296d42af_403415214_1100301921335687_8728654510969962949_n.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>BlogApp</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/BlogApp</BasePath>
+      <RelativePath>uploads/d0a1a6c3-23a3-4c16-a457-97b3296d42af_403415214_1100301921335687_8728654510969962949_n.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>y4nn48lox3</Fingerprint>
+      <Integrity>HjeU9izSJLGbnZ9OdViUkNZaM7qs9syGOBPgg7Z0J3A=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d0a1a6c3-23a3-4c16-a457-97b3296d42af_403415214_1100301921335687_8728654510969962949_n.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d6ba8ed3-4470-4028-806a-d26aadcfd019_413297596_356197690502736_5906773763697615513_n.jpg'))">
       <SourceType>Package</SourceType>

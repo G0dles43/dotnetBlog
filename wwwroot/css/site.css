@@ -1,3 +1,25 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --card-bg: #b8b6b6e7;
+  --border-color: #dee2e6;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --link-hover: #0056b3;
+  --btn-hover: #e2e6ea;
+  --placeholder-color: #6c757d;
+}
+
+html.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e4e4e4;
+  --card-bg: #1e1e1e;
+  --border-color: #333;
+  --box-shadow-color: rgba(255, 255, 255, 0.05);
+  --link-hover: #58a6ff;
+  --btn-hover: #2c2c2c;
+  --placeholder-color: #aaaaaa;
+}
+
 html {
   font-size: 14px;
   position: relative;
@@ -13,8 +35,9 @@ html {
 body {
   margin-bottom: 60px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #212529;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:focus,
@@ -27,7 +50,7 @@ body {
 
 .form-floating > .form-control::placeholder,
 .form-floating > .form-control-plaintext::placeholder {
-  color: var(--bs-secondary-color);
+  color: var(--placeholder-color);
   text-align: end;
 }
 
@@ -42,27 +65,84 @@ body {
   height: auto;
   object-fit: cover;
   border-radius: 0.5rem;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.25rem 0.75rem var(--box-shadow-color);
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .border-top {
-  border-top: 1px solid #dee2e6;
+  border-top: 1px solid var(--border-color);
 }
 
 .border-bottom {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .box-shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem var(--box-shadow-color);
 }
 
 .limited-width {
-  max-width: 600px; /* lub mniej, np. 700px jeśli chcesz węższy */
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.navbar,
+.footer {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color);
+}
+
+.navbar a,
+.footer a {
+  color: var(--text-color);
+}
+
+.card-title a.stretched-link {
+  color: var(--text-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-title a.stretched-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Dynamiczne tła */
+.dynamic-bg {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.dynamic-link {
+  color: var(--text-color) !important;
+  text-decoration: none;
+}
+
+.dynamic-link:hover {
+  color: var(--link-hover) !important;
+  text-decoration: underline;
+}
+
+/* Zmiana koloru dla text-muted w ciemnym trybie */
+html.dark-mode .text-muted {
+  color: #aaa !important;
+}
+
+/* Przycisk głosowania */
+.vote-buttons .btn-outline-success,
+.vote-buttons .btn-outline-danger,
+.comment-vote {
+  border-color: var(--border-color);
 }

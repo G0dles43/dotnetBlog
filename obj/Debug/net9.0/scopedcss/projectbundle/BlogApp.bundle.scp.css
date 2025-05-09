@@ -69,3 +69,19 @@ button.accept-policy:hover[b-gr6vkwv4lw] {
   margin-top: 10px;
   font-style: italic;
 }
+
+:root[b-gr6vkwv4lw] {
+  --bg-color: white;
+  --text-color: black;
+}
+
+body.dark-mode[b-gr6vkwv4lw] {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+}
+
+body[b-gr6vkwv4lw] {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
