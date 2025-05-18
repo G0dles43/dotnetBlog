@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "B8Gz3uNKazxik6O1pjbaqIisPCL0XLCaBAUPbiwBSvs=",
+  "Hash": "1wz0OSUQu7yNJ6NWr3ESjKHI0Twacps2445Wny7RxGc=",
   "Source": "BlogApp",
   "BasePath": "_content/BlogApp",
   "Mode": "Default",
@@ -5559,6 +5559,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\7c366959-6713-4e0f-8c9b-b78f27f0cbfa_goofy.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\992da861-b002-4732-8c4a-e775908f6a7e_2si0gxzhvb741.jpg",
+      "SourceId": "BlogApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\",
+      "BasePath": "_content/BlogApp",
+      "RelativePath": "uploads/992da861-b002-4732-8c4a-e775908f6a7e_2si0gxzhvb741#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cg3506615w",
+      "Integrity": "vBixjEOsTkJaNGF8d9NSD6KzCp5VNeSX7/NQ9Uk+r2Y=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\992da861-b002-4732-8c4a-e775908f6a7e_2si0gxzhvb741.jpg"
     },
     {
       "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\9f7d75bb-c21b-45c4-9903-38ead95c514d.gif",
@@ -36668,6 +36689,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-GN6JEoMq3kThbMtsDm9zy1/WKdsGcf+stpoCuOWovsk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/992da861-b002-4732-8c4a-e775908f6a7e_2si0gxzhvb741.cg3506615w.jpg",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\992da861-b002-4732-8c4a-e775908f6a7e_2si0gxzhvb741.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37867"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vBixjEOsTkJaNGF8d9NSD6KzCp5VNeSX7/NQ9Uk+r2Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 09 May 2025 20:35:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cg3506615w"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/992da861-b002-4732-8c4a-e775908f6a7e_2si0gxzhvb741.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vBixjEOsTkJaNGF8d9NSD6KzCp5VNeSX7/NQ9Uk+r2Y="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/992da861-b002-4732-8c4a-e775908f6a7e_2si0gxzhvb741.jpg",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\992da861-b002-4732-8c4a-e775908f6a7e_2si0gxzhvb741.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37867"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vBixjEOsTkJaNGF8d9NSD6KzCp5VNeSX7/NQ9Uk+r2Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 09 May 2025 20:35:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vBixjEOsTkJaNGF8d9NSD6KzCp5VNeSX7/NQ9Uk+r2Y="
         }
       ]
     },

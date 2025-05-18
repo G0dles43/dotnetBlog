@@ -18,6 +18,16 @@
     </a>
    
     <h3>Posts</h3>
+    @if (ViewBag.SelectedTag != null)
+    {
+        <div class="mb-3">
+            <h5>Filtering by tag: 
+                <span class="badge bg-info text-dark">@ViewBag.SelectedTag.Name</span>
+                <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-sm btn-outline-secondary ms-2">Clear</a>
+            </h5>
+        </div>
+    }
+
     @if (!Model.Posts.Any())
     {
         <p>No posts in this blog yet.</p>
@@ -31,6 +41,21 @@
                     <div>
                         <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id" class="dynamic-link">
                             @post.Title
+                            @if (post.PostTags.Any())
+                            {
+                                <div class="mt-1">
+                                    @foreach (var pt in post.PostTags)
+                                    {
+                                        <a asp-action="Details"
+                                        asp-route-id="@Model.Id"
+                                        asp-route-tagId="@pt.Tag.Id"
+                                        class="badge bg-primary text-white me-1">
+                                            @pt.Tag.Name
+                                        </a>
+                                    }
+                                </div>
+                            }
+
                         </a>
                     </div>
 

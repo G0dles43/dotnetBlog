@@ -16,6 +16,8 @@ namespace BlogApp.Models
         public string UserId { get; set; } = string.Empty;
         public virtual ICollection<PostVote> Votes { get; set; } = new List<PostVote>();
         public string? ImagePath { get; set; }
+        public ICollection<PostTag> PostTags { get; set; } = new List<PostTag>();
+
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

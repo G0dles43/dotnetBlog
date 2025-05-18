@@ -141,21 +141,6 @@ namespace BlogApp.Migrations
                     b.ToTable("Profiles");
                 });
 
-            modelBuilder.Entity("BlogApp.Models.Tag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Tags");
-                });
-
             modelBuilder.Entity("CommentVote", b =>
                 {
                     b.Property<int>("Id")
@@ -375,6 +360,21 @@ namespace BlogApp.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PostTag", b =>
+                {
+                    b.Property<int>("PostId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("PostId", "TagId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("PostTags");
+                });
+
             modelBuilder.Entity("PostVote", b =>
                 {
                     b.Property<int>("Id")
@@ -396,6 +396,21 @@ namespace BlogApp.Migrations
                     b.HasIndex("PostId");
 
                     b.ToTable("PostVotes");
+                });
+
+            modelBuilder.Entity("Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("BlogApp.Models.Comment", b =>
@@ -497,6 +512,25 @@ namespace BlogApp.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PostTag", b =>
+                {
+                    b.HasOne("BlogApp.Models.Post", "Post")
+                        .WithMany("PostTags")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Tag", "Tag")
+                        .WithMany("PostTags")
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("Tag");
+                });
+
             modelBuilder.Entity("PostVote", b =>
                 {
                     b.HasOne("BlogApp.Models.Post", null)
@@ -520,7 +554,14 @@ namespace BlogApp.Migrations
                 {
                     b.Navigation("Comments");
 
+                    b.Navigation("PostTags");
+
                     b.Navigation("Votes");
+                });
+
+            modelBuilder.Entity("Tag", b =>
+                {
+                    b.Navigation("PostTags");
                 });
 #pragma warning restore 612, 618
         }

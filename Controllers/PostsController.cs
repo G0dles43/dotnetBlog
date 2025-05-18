@@ -26,11 +26,12 @@ namespace BlogApp.Controllers
             if (id == null) return NotFound();
 
             var post = await _context.Posts
+                .Include(p => p.PostTags)
+                    .ThenInclude(pt => pt.Tag)
                 .Include(p => p.Comments)
-                    .ThenInclude(c => c.User)  // Ładujemy dane użytkownika powiązane z komentarzami
+                    .ThenInclude(c => c.User)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
-            if (post == null) return NotFound();
 
             // Opcjonalnie zwiększ licznik wyświetleń
             post.ViewCount++;
@@ -41,42 +42,98 @@ namespace BlogApp.Controllers
 
 
         // GET: Posts
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? tagId)
         {
-            return View(await _context.Posts.ToListAsync());
+            var postsQuery = _context.Posts
+                .Include(p => p.PostTags)
+                    .ThenInclude(pt => pt.Tag)
+                .AsQueryable();
+
+            if (tagId.HasValue)
+            {
+                postsQuery = postsQuery.Where(p => p.PostTags.Any(pt => pt.TagId == tagId.Value));
+                ViewBag.SelectedTag = await _context.Tags.FindAsync(tagId.Value);
+            }
+
+            var posts = await postsQuery.ToListAsync();
+            return View(posts);
         }
+
 
         // GET: Posts/Create
         public IActionResult Create(int? blogId)
         {
             if (!blogId.HasValue)
-            {
                 return BadRequest("BlogId is required.");
-            }
 
-            var post = new Post { BlogId = blogId.Value };
-            return View(post);
+            ViewBag.BlogId = blogId.Value;
+            ViewBag.AvailableTags = _context.Tags
+                .Select(t => new SelectListItem { Value = t.Id.ToString(), Text = t.Name })
+                .ToList();
+
+            return View(new Post());
         }
 
         // POST: Posts/Create
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Content,BlogId")] Post post, IFormFile? imageFile)
+        public async Task<IActionResult> Create([Bind("Title,Content,BlogId")] Post post, string? newTags, List<int> selectedTags, IFormFile? imageFile)
         {
             if (ModelState.IsValid)
             {
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    post.ImagePath = await ProcessImage(imageFile);  
+                    post.ImagePath = await ProcessImage(imageFile);
                 }
+
                 post.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                // Dodaj wybrane tagi
+                foreach (var tagId in selectedTags)
+                {
+                    post.PostTags.Add(new PostTag { TagId = tagId });
+                }
+
+                // Obsługa nowych tagów (z pola tekstowego, np. "asp.net, c#, ef")
+                if (!string.IsNullOrWhiteSpace(newTags))
+                {
+                    var tags = newTags
+                        .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                        .Select(t => t.Trim().ToLower())
+                        .Distinct();
+
+                    foreach (var tagName in tags)
+                    {
+                        var tag = await _context.Tags.FirstOrDefaultAsync(t => t.Name.ToLower() == tagName);
+                        if (tag == null)
+                        {
+                            tag = new Tag { Name = tagName };
+                            _context.Tags.Add(tag);
+                            await _context.SaveChangesAsync(); // Potrzebne, żeby mieć ID
+                        }
+
+                        if (!post.PostTags.Any(pt => pt.TagId == tag.Id))
+                        {
+                            post.PostTags.Add(new PostTag { TagId = tag.Id });
+                        }
+                    }
+                }
+
                 _context.Add(post);
                 await _context.SaveChangesAsync();
+
                 return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
             }
+
+            // Jeśli błąd - załaduj tagi ponownie
+            ViewBag.AvailableTags = _context.Tags
+                .Select(t => new SelectListItem { Value = t.Id.ToString(), Text = t.Name })
+                .ToList();
+
             return View(post);
         }
+
 
 
         // GET: Posts/Edit/5

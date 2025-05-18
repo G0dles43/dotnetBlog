@@ -1,19 +1,48 @@
 @model BlogApp.Models.Post
+@{
+    ViewData["Title"] = "Create Post";
+    var tags = ViewBag.AvailableTags as List<SelectListItem>;
+}
 
 <form asp-action="Create" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="BlogId" value="@ViewBag.BlogId" />
+
     <div class="mb-3">
         <label asp-for="Title" class="form-label"></label>
         <input asp-for="Title" class="form-control" />
         <span asp-validation-for="Title" class="text-danger"></span>
     </div>
+
     <div class="mb-3">
         <label asp-for="Content" class="form-label"></label>
-        <textarea asp-for="Content" class="form-control"></textarea>
+        <textarea asp-for="Content" class="form-control" rows="4"></textarea>
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
-    <div class="mb-3"></div>
-    <input type="file" name="imageFile" class="form-control" accept="image/*" />
+
+    <div class="mb-3">
+        <label class="form-label">Select Tags</label>
+        <select name="selectedTags" class="form-select" multiple>
+            @foreach (var tag in tags)
+            {
+                <option value="@tag.Value">@tag.Text</option>
+            }
+        </select>
+        <small class="form-text text-muted">Hold CTRL to select multiple.</small>
     </div>
-    <input type="hidden" asp-for="BlogId" value="@Model.BlogId" />
-    <button type="submit" class="btn btn-success">Create New Post</button>
+
+    <div class="mb-3">
+        <label class="form-label">Add New Tags (comma separated)</label>
+        <input type="text" name="newTags" class="form-control" placeholder="e.g. c#, blazor, api" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Image (optional)</label>
+        <input type="file" name="imageFile" class="form-control" accept="image/*" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Create Post</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,11 +1,7 @@
-using System.Collections.Generic;
-
-namespace BlogApp.Models
+public class Tag
 {
-    public class Tag
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; } = null!;
 
-    }
+    public ICollection<PostTag> PostTags { get; set; } = new List<PostTag>();
 }

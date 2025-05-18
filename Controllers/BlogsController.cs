@@ -126,23 +126,31 @@ namespace BlogApp.Controllers
         }
 
         // GET: Blogs/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, int? tagId)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var blog = await _context.Blogs
                 .Include(b => b.Posts)
+                    .ThenInclude(p => p.PostTags)
+                        .ThenInclude(pt => pt.Tag)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (blog == null)
-            {
                 return NotFound();
+
+            if (tagId.HasValue)
+            {
+                blog.Posts = blog.Posts
+                    .Where(p => p.PostTags.Any(pt => pt.TagId == tagId.Value))
+                    .ToList();
+
+                ViewBag.SelectedTag = await _context.Tags.FindAsync(tagId.Value);
             }
 
             return View(blog);
         }
+
     }
 }

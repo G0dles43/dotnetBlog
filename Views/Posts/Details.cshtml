@@ -10,6 +10,19 @@
         <a asp-controller="Blogs" asp-action="Details" asp-route-id="@Model.BlogId" class="btn btn-secondary">Back to Posts</a>
     </div>
     <h1>@Model.Title</h1>
+    @if (Model.PostTags.Any())
+    {
+        <p>
+            <strong>Tags:</strong>
+            @foreach (var pt in Model.PostTags)
+            {
+                <a asp-controller="Posts" asp-action="Index" asp-route-tagId="@pt.Tag.Id" class="badge bg-primary text-white me-1">
+                    @pt.Tag.Name
+                </a>
+            }
+        </p>
+    }
+
     <p class="text-muted">Posted on @Model.CreatedAt.ToString("g") • Views: @Model.ViewCount</p>
 
     @if (!string.IsNullOrEmpty(Model.ImagePath))
