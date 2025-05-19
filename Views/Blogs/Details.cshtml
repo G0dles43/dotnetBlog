@@ -18,6 +18,7 @@
     </a>
    
     <h3>Posts</h3>
+    
     @if (ViewBag.SelectedTag != null)
     {
         <div class="mb-3">
@@ -27,6 +28,32 @@
             </h5>
         </div>
     }
+    
+
+        <div class="btn-group" role="group">
+            @{
+                var currentTag = ViewBag.SelectedTag?.Id;
+                var sortOptions = new Dictionary<string, string>
+                {
+                    { "name", "Alfabetycznie A-Z" },
+                    { "name_desc", "Alfabetycznie Z-A" },
+                    { "views", "Najmniej wyświetleń" },
+                    { "views_desc", "Najwięcej wyświetleń" }
+                };
+            }
+
+            @foreach (var option in sortOptions)
+            {
+                <a asp-action="Details" 
+                asp-route-id="@Model.Id" 
+                asp-route-tagId="@currentTag"
+                asp-route-sortOrder="@option.Key"
+                class="btn btn-outline-primary @(ViewBag.CurrentSort == option.Key ? "active" : "")">
+                    @option.Value
+                </a>
+            }
+        </div>
+    
 
     @if (!Model.Posts.Any())
     {
@@ -34,6 +61,7 @@
     }
     else
     {
+    
        <ul class="list-group">
             @foreach (var post in Model.Posts)
             {

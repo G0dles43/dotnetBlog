@@ -126,10 +126,14 @@ namespace BlogApp.Controllers
         }
 
         // GET: Blogs/Details/5
-        public async Task<IActionResult> Details(int? id, int? tagId)
+        public async Task<IActionResult> Details(int? id, int? tagId, string sortOrder)
         {
-            if (id == null)
-                return NotFound();
+            if (id == null) return NotFound();
+
+            // Ustaw domyślne sortowanie
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSort = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.ViewsSort = sortOrder == "views" ? "views_desc" : "views";
 
             var blog = await _context.Blogs
                 .Include(b => b.Posts)
@@ -137,16 +141,32 @@ namespace BlogApp.Controllers
                         .ThenInclude(pt => pt.Tag)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (blog == null)
-                return NotFound();
+            if (blog == null) return NotFound();
 
+            // Filtrowanie po tagu
             if (tagId.HasValue)
             {
                 blog.Posts = blog.Posts
                     .Where(p => p.PostTags.Any(pt => pt.TagId == tagId.Value))
                     .ToList();
-
                 ViewBag.SelectedTag = await _context.Tags.FindAsync(tagId.Value);
+            }
+
+            // Sortowanie
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    blog.Posts = blog.Posts.OrderByDescending(p => p.Title).ToList();
+                    break;
+                case "views":
+                    blog.Posts = blog.Posts.OrderBy(p => p.ViewCount).ToList();
+                    break;
+                case "views_desc":
+                    blog.Posts = blog.Posts.OrderByDescending(p => p.ViewCount).ToList();
+                    break;
+                default:  // "name" - domyślnie
+                    blog.Posts = blog.Posts.OrderBy(p => p.Title).ToList();
+                    break;
             }
 
             return View(blog);
