@@ -33,12 +33,11 @@
         <div class="btn-group" role="group">
             @{
                 var currentTag = ViewBag.SelectedTag?.Id;
+
                 var sortOptions = new Dictionary<string, string>
                 {
-                    { "name", "Alfabetycznie A-Z" },
-                    { "name_desc", "Alfabetycznie Z-A" },
-                    { "views", "Najmniej wyświetleń" },
-                    { "views_desc", "Najwięcej wyświetleń" }
+                    { ViewBag.NameSortParam, "Title " + (ViewBag.NameSortParam == "name_desc" ? "Z-A" : "A-Z") },
+                    { ViewBag.ViewsSortParam, "Views " + (ViewBag.ViewsSortParam == "views_desc" ? "↓" : "↑") }
                 };
             }
 
@@ -53,8 +52,8 @@
                 </a>
             }
         </div>
-    
 
+    
     @if (!Model.Posts.Any())
     {
         <p>No posts in this blog yet.</p>

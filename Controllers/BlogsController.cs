@@ -18,9 +18,31 @@ namespace BlogApp.Controllers
         }
 
         // GET: Blogs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Blogs.ToListAsync());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParam = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PostsSortParam = sortOrder == "posts" ? "posts_desc" : "posts";
+
+            var blogs = _context.Blogs.Include(b => b.Posts).AsQueryable();
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    blogs = blogs.OrderByDescending(b => b.Title);
+                    break;
+                case "posts":
+                    blogs = blogs.OrderBy(b => b.Posts.Count);
+                    break;
+                case "posts_desc":
+                    blogs = blogs.OrderByDescending(b => b.Posts.Count);
+                    break;
+                default: // "name" - domyślnie
+                    blogs = blogs.OrderBy(b => b.Title);
+                    break;
+            }
+
+            return View(await blogs.ToListAsync());
         }
 
         // GET: Blogs/Create
@@ -126,29 +148,27 @@ namespace BlogApp.Controllers
         }
 
         // GET: Blogs/Details/5
-        public async Task<IActionResult> Details(int? id, int? tagId, string sortOrder)
+        public async Task<IActionResult> Details(int? id, string? sortOrder, int? tagId)
         {
             if (id == null) return NotFound();
-
-            // Ustaw domyślne sortowanie
-            ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSort = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.ViewsSort = sortOrder == "views" ? "views_desc" : "views";
 
             var blog = await _context.Blogs
                 .Include(b => b.Posts)
                     .ThenInclude(p => p.PostTags)
                         .ThenInclude(pt => pt.Tag)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(b => b.Id == id);
 
             if (blog == null) return NotFound();
 
-            // Filtrowanie po tagu
+            ViewBag.NameSortParam = sortOrder == "name_desc" ? "name" : "name_desc";
+            ViewBag.ViewsSortParam = sortOrder == "views_desc" ? "views" : "views_desc";
+            ViewBag.CurrentSort = sortOrder;
+            var posts = blog.Posts.AsQueryable();
+
+            // Filtrowanie po tagu (jeśli używasz tagów)
             if (tagId.HasValue)
             {
-                blog.Posts = blog.Posts
-                    .Where(p => p.PostTags.Any(pt => pt.TagId == tagId.Value))
-                    .ToList();
+                posts = posts.Where(p => p.PostTags.Any(pt => pt.TagId == tagId.Value));
                 ViewBag.SelectedTag = await _context.Tags.FindAsync(tagId.Value);
             }
 
@@ -156,21 +176,24 @@ namespace BlogApp.Controllers
             switch (sortOrder)
             {
                 case "name_desc":
-                    blog.Posts = blog.Posts.OrderByDescending(p => p.Title).ToList();
+                    posts = posts.OrderByDescending(p => p.Title);
                     break;
                 case "views":
-                    blog.Posts = blog.Posts.OrderBy(p => p.ViewCount).ToList();
+                    posts = posts.OrderBy(p => p.ViewCount);
                     break;
                 case "views_desc":
-                    blog.Posts = blog.Posts.OrderByDescending(p => p.ViewCount).ToList();
+                    posts = posts.OrderByDescending(p => p.ViewCount);
                     break;
-                default:  // "name" - domyślnie
-                    blog.Posts = blog.Posts.OrderBy(p => p.Title).ToList();
+                default:
+                    posts = posts.OrderBy(p => p.Title);
                     break;
             }
 
+            blog.Posts = posts.ToList(); // Przekształć z IQueryable do List
+
             return View(blog);
         }
+
 
     }
 }
