@@ -157,9 +157,8 @@ namespace BlogApp.Controllers
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (postInDb.UserId != userId && !User.IsInRole("Admin"))
-                return Forbid(); // zabezpieczenie
+                return Forbid();
 
-            // Aktualizuj tylko edytowalne pola
             postInDb.Title = updatedPost.Title;
             postInDb.Content = updatedPost.Content;
             postInDb.BlogId = updatedPost.BlogId;
@@ -183,6 +182,7 @@ namespace BlogApp.Controllers
 
             return RedirectToAction("Details", "Blogs", new { id = postInDb.BlogId });
         }
+
 
         
         private async Task<string> ProcessImage(IFormFile imageFile)

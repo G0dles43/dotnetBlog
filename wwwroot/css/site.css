@@ -149,3 +149,12 @@ html.dark-mode .text-muted {
   position: relative;
   z-index: 2;
 }
+.post-link {
+  color: var(--text-color) !important;
+  text-decoration: none;
+}
+
+.post-link:hover {
+  color: var(--link-hover) !important;
+  text-decoration: underline;
+}

@@ -67,7 +67,7 @@
                     <div class="card shadow-sm h-100">
                         <div class="card-body position-relative">
                             <h5>
-                                <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id" class="text-decoration-none text-dark stretched-link">
+                                <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id" class="post-link stretched-link">
                                     @post.Title
                                 </a>
                             </h5>
@@ -79,9 +79,10 @@
                                     @foreach (var pt in post.PostTags)
                                     {
                                         <a asp-action="Details"
-                                           asp-route-id="@Model.Id"
-                                           asp-route-tagId="@pt.Tag.Id"
-                                           class="badge bg-primary text-white me-1">
+                                            asp-route-id="@Model.Id"
+                                            asp-route-tagId="@pt.Tag.Id"
+                                            class="badge bg-primary text-white me-1"
+                                            style="position: relative; z-index: 10;">
                                             @pt.Tag.Name
                                         </a>
                                     }
