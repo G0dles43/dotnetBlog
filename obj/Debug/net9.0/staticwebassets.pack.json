@@ -333,6 +333,14 @@
       "PackagePath": "staticwebassets\\uploads\\bcec5f85-3a85-499a-ae8f-eef142c5ef94.jpg"
     },
     {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\bd60ff21-5f10-4ffc-b8ca-e57248ef8781.gif",
+      "PackagePath": "staticwebassets\\uploads\\bd60ff21-5f10-4ffc-b8ca-e57248ef8781.gif"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\c3f65e2f-3c9c-459a-8381-d40c4d3ab6b5_2024-10-01.webp",
+      "PackagePath": "staticwebassets\\uploads\\c3f65e2f-3c9c-459a-8381-d40c4d3ab6b5_2024-10-01.webp"
+    },
+    {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\d002c65e-bc53-4540-9985-232d845411a6_730_1.jpg",
       "PackagePath": "staticwebassets\\uploads\\d002c65e-bc53-4540-9985-232d845411a6_730_1.jpg"
     },
@@ -351,6 +359,10 @@
     {
       "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg",
       "PackagePath": "staticwebassets\\uploads\\ebef6cfc-efa4-45ee-9e7c-0cb86b81cfd5_1_ltGFbMH774FllZlXmH_fQg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\uploads\\f62b11f9-e917-4dbd-85ca-16414de7f956_489288669_1720799878475847_665426481335408433_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f62b11f9-e917-4dbd-85ca-16414de7f956_489288669_1720799878475847_665426481335408433_n.jpg"
     },
     {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.BlogApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

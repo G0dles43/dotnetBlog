@@ -135,14 +135,17 @@ body {
   text-decoration: underline;
 }
 
-/* Zmiana koloru dla text-muted w ciemnym trybie */
 html.dark-mode .text-muted {
   color: #ffffff !important;
 }
 
-/* Przycisk głosowania */
 .vote-buttons .btn-outline-success,
 .vote-buttons .btn-outline-danger,
 .comment-vote {
   border-color: var(--border-color);
+}
+
+.card-footer a {
+  position: relative;
+  z-index: 2;
 }

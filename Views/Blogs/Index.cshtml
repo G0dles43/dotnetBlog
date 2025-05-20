@@ -1,11 +1,12 @@
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<IdentityUser> UserManager
 @model IEnumerable<BlogApp.Models.Blog>
+
 @{
     ViewData["Title"] = "All Blogs";
 }
 
-<div class="container py-4">
+<div class="container py-4 limited-width">
     <h1>@ViewData["Title"]</h1>
 
     <p>
@@ -24,8 +25,7 @@
 
             @foreach (var option in sortOptions)
             {
-                <a asp-action="Index" 
-                   asp-route-sortOrder="@option.Key"
+                <a asp-action="Index" asp-route-sortOrder="@option.Key"
                    class="btn btn-outline-primary @(ViewBag.CurrentSort == option.Key ? "active" : "")">
                     @option.Value
                 </a>
@@ -33,25 +33,29 @@
         </div>
     </div>
 
-    <ul class="list-group">
+    <div class="row row-cols-1 g-4">
         @foreach (var b in Model)
         {
-            <li class="list-group-item dynamic-bg d-flex justify-content-between align-items-center flex-wrap">
-                <div>
-                    <a asp-action="Details" asp-route-id="@b.Id" class="dynamic-link">
-                        @b.Title
-                        <span class="badge bg-secondary ms-2">@b.Posts.Count posts</span>
-                    </a>
+            <div class="col">
+                <div class="card dynamic-bg box-shadow p-3 position-relative">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div>
+                            <h4 class="card-title">
+                                <a asp-action="Details" asp-route-id="@b.Id" class="stretched-link">@b.Title</a>
+                            </h4>
+                            <span class="badge bg-secondary">@b.Posts.Count posts</span>
+                        </div>
+                        @if (b.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
+                        {
+                            <div class="btn-group btn-group-sm mt-3 mt-md-0" role="group" style="z-index: 2; position: relative;">
+                                <a asp-action="Edit" asp-route-id="@b.Id" class="btn btn-outline-warning">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@b.Id" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        }
+                    </div>
                 </div>
 
-                @if (b.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
-                {
-                    <div class="btn-group btn-group-sm mt-2 mt-md-0" role="group">
-                        <a asp-action="Edit" asp-route-id="@b.Id" class="btn btn-outline-warning btn-sm">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@b.Id" class="btn btn-outline-danger btn-sm">Delete</a>
-                    </div>
-                }
-            </li>
+            </div>
         }
-    </ul>
+    </div>
 </div>

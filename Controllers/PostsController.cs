@@ -41,23 +41,7 @@ namespace BlogApp.Controllers
         }
 
 
-        // GET: Posts
-        public async Task<IActionResult> Index(int? tagId)
-        {
-            var postsQuery = _context.Posts
-                .Include(p => p.PostTags)
-                    .ThenInclude(pt => pt.Tag)
-                .AsQueryable();
-
-            if (tagId.HasValue)
-            {
-                postsQuery = postsQuery.Where(p => p.PostTags.Any(pt => pt.TagId == tagId.Value));
-                ViewBag.SelectedTag = await _context.Tags.FindAsync(tagId.Value);
-            }
-
-            var posts = await postsQuery.ToListAsync();
-            return View(posts);
-        }
+        
 
 
         // GET: Posts/Create
@@ -279,22 +263,27 @@ namespace BlogApp.Controllers
             {
                 if (existingVote.IsUpvote == isUpvote)
                 {
-                    // Usuń głos, jeśli ten sam
                     _context.PostVotes.Remove(existingVote);
                     if (isUpvote) post.Likes--;
                     else post.Dislikes--;
                 }
                 else
                 {
-                    // Zmień głos
                     existingVote.IsUpvote = isUpvote;
-                    post.Likes += isUpvote ? 1 : -1;
-                    post.Dislikes += isUpvote ? -1 : 1;
+                    if (isUpvote)
+                    {
+                        post.Likes++;
+                        post.Dislikes--;
+                    }
+                    else
+                    {
+                        post.Likes--;
+                        post.Dislikes++;
+                    }
                 }
             }
             else
             {
-                // Nowy głos
                 post.Votes.Add(new PostVote
                 {
                     UserId = userId,
@@ -304,9 +293,13 @@ namespace BlogApp.Controllers
                 else post.Dislikes++;
             }
 
+            post.Likes = Math.Max(0, post.Likes);
+            post.Dislikes = Math.Max(0, post.Dislikes);
+
             await _context.SaveChangesAsync();
             return Ok(new { post.Likes, post.Dislikes });
         }
+
 
 
         [HttpPost]
@@ -326,14 +319,12 @@ namespace BlogApp.Controllers
             {
                 if (existingVote.IsUpvote == isUpvote)
                 {
-                    // Usuń głos jeśli ten sam
                     _context.CommentVotes.Remove(existingVote);
                     if (isUpvote) comment.Likes--;
                     else comment.Dislikes--;
                 }
                 else
                 {
-                    // Zmień głos
                     existingVote.IsUpvote = isUpvote;
                     comment.Likes += isUpvote ? 1 : -1;
                     comment.Dislikes += isUpvote ? -1 : 1;
@@ -341,7 +332,6 @@ namespace BlogApp.Controllers
             }
             else
             {
-                // Nowy głos
                 comment.Votes.Add(new CommentVote
                 {
                     UserId = userId,
