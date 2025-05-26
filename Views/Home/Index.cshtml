@@ -10,6 +10,12 @@
     <div class="text-center">
         <h1>Welcome to BlogApp</h1>
 
+        <div id="daily-joke" class="alert alert-warning mt-4" role="alert">
+            <strong>Daily joke</strong>
+            <div id="joke-content">Joke loading...</div>
+        </div>
+
+
         <p class="mt-4">
             <a asp-controller="Blogs" asp-action="Index" class="btn btn-lg btn-primary">
                 See all blogs
@@ -17,3 +23,20 @@
         </p>
     </div>
 </div>
+<script>
+    fetch('/Home/DailyJoke')
+        .then(res => res.json())
+        .then(data => {
+            const jokeDiv = document.getElementById('joke-content');
+            if (data.error) {
+                jokeDiv.textContent = "Nie udało się załadować dowcipu 😢";
+            } else if (data.type === "twopart") {
+                jokeDiv.innerHTML = `<strong>${data.setup}</strong><br>${data.delivery}`;
+            } else {
+                jokeDiv.textContent = data.joke;
+            }
+        })
+        .catch(() => {
+            document.getElementById('joke-content').textContent = "Błąd ładowania dowcipu 😢";
+        });
+</script>

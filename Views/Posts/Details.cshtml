@@ -10,6 +10,8 @@
         <a asp-controller="Blogs" asp-action="Details" asp-route-id="@Model.BlogId" class="btn btn-secondary">Back to Posts</a>
     </div>
     <h1>@Model.Title</h1>
+    
+
     @if (Model.PostTags.Any())
     {
         <p>
@@ -31,6 +33,44 @@
             <img src="@Model.ImagePath" alt="Post image test" style="width:300px;" />
         </div>
     }
+    <form method="post" asp-controller="Posts" asp-action="RatePost" id="ratingForm">
+        <input type="hidden" name="postId" value="@Model.Id" />
+        <input type="hidden" name="rating" id="ratingInput" value="@ViewBag.UserRating" />
+        <div class="star-rating mb-2" style="font-size: 1.8rem; cursor: pointer;">
+            @for (int i = 1; i <= 5; i++)
+            {
+                <i class="@(i <= ViewBag.UserRating ? "fas" : "far") fa-star" data-value="@i"></i>
+            }
+        </div>
+    </form>
+
+    @{
+        int fullStars = 0;
+        bool halfStar = false;
+        int emptyStars = 5;
+
+        if (Model.AverageRating.HasValue)
+        {
+            fullStars = (int)Math.Floor(Model.AverageRating.Value);
+            halfStar = Model.AverageRating.Value - fullStars >= 0.5;
+            emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+        }
+    }
+
+    @if (Model.AverageRating.HasValue)
+    {
+        <div class="rating-display mb-3">
+            <strong>Average Rating:</strong>
+            <span class="text-warning">
+                @for (int i = 0; i < fullStars; i++) { <i class="fas fa-star"></i> }
+                @if (halfStar) { <i class="fas fa-star-half-alt"></i> }
+                @for (int i = 0; i < emptyStars; i++) { <i class="far fa-star"></i> }
+            </span>
+            <span class="text-muted">(@Model.AverageRating.Value.ToString("0.0") / 5)</span>
+        </div>
+    }
+
+
 
     <div class="mb-5">
         @Html.Raw(Model.Content.Replace("\n", "<br/>"))
@@ -110,7 +150,6 @@
 
 @section Scripts {
     <script>
-        // Funkcja głosowania dla postów
         document.querySelectorAll('.vote-btn').forEach(button => {
             button.addEventListener('click', async function() {
                 const postId = this.dataset.id;
@@ -133,7 +172,6 @@
             });
         });
 
-        // Funkcja głosowania dla komentarzy
         document.querySelectorAll('.comment-vote').forEach(button => {
             button.addEventListener('click', async function() {
                 const commentId = this.dataset.id;
@@ -146,7 +184,6 @@
 
                     if (response.ok) {
                         const data = await response.json();
-                        // Aktualizuj oba liczniki
                         const container = this.closest('.vote-buttons');
                         container.querySelector('.btn-outline-success .count').textContent = data.likes;
                         container.querySelector('.btn-outline-danger .count').textContent = data.dislikes;
@@ -155,6 +192,80 @@
                     console.error('Error:', error);
                 }
             });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star-rating i');
+            const ratingInput = document.getElementById('ratingInput');
+            
+            // Inicjalizacja gwiazdek na podstawie istniejącej oceny
+            const initialRating = parseInt(ratingInput.value);
+            highlightStars(initialRating);
+
+            stars.forEach(star => {
+                star.addEventListener('mouseenter', function() {
+                    const val = parseInt(this.dataset.value);
+                    highlightStars(val);
+                });
+                
+                star.addEventListener('mouseleave', function() {
+                    const currentRating = parseInt(ratingInput.value);
+                    highlightStars(currentRating);
+                });
+                
+                star.addEventListener('click', async function() {
+                    const val = parseInt(this.dataset.value);
+                    ratingInput.value = val;
+                    highlightStars(val);
+                    
+                    // Wysyłanie oceny przez AJAX
+                    try {
+                        const formData = new FormData(document.getElementById('ratingForm'));
+                        const response = await fetch('/Posts/RatePost', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            // Odświeżenie średniej oceny
+                            const data = await response.json();
+                            if (data.averageRating) {
+                                updateAverageRating(data.averageRating);
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Błąd podczas wysyłania oceny:', error);
+                    }
+                });
+            });
+            
+            function highlightStars(value) {
+                stars.forEach(star => {
+                    const starValue = parseInt(star.dataset.value);
+                    star.classList.toggle('fas', starValue <= value);
+                    star.classList.toggle('far', starValue > value);
+                });
+            }
+            
+            function updateAverageRating(average) {
+                // Tutaj możesz zaktualizować wyświetlaną średnią ocen
+                document.querySelector('.rating-display .text-muted').textContent = 
+                    `(${average.toFixed(1)} / 5)`;
+                
+                // Aktualizacja gwiazdek średniej oceny
+                const fullStars = Math.floor(average);
+                const hasHalfStar = average - fullStars >= 0.5;
+                
+                const averageStars = document.querySelectorAll('.rating-display i');
+                averageStars.forEach((star, index) => {
+                    star.className = index < fullStars ? 'fas fa-star' : 
+                                    (hasHalfStar && index === fullStars ? 'fas fa-star-half-alt' : 'far fa-star');
+                });
+            }
         });
     </script>
 }

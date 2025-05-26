@@ -24,6 +24,7 @@ namespace BlogApp.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
+            
 
             var post = await _context.Posts
                 .Include(p => p.PostTags)
@@ -31,12 +32,26 @@ namespace BlogApp.Controllers
                 .Include(p => p.Comments)
                     .ThenInclude(c => c.User)
                 .FirstOrDefaultAsync(p => p.Id == id);
+            
+            post.AverageRating = await _context.PostRatings
+                .Where(r => r.PostId == post.Id)
+                .Select(r => (double?)r.Rating)
+                .AverageAsync();
 
-
-            // Opcjonalnie zwiększ licznik wyświetleń
             post.ViewCount++;
             await _context.SaveChangesAsync();
-
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId != null)
+            {
+                var userRating = await _context.PostRatings
+                    .FirstOrDefaultAsync(r => r.PostId == post.Id && r.UserId == userId);
+                
+                ViewBag.UserRating = userRating?.Rating ?? 0;
+            }
+            else
+            {
+                ViewBag.UserRating = 0;
+            }
             return View(post);
         }
 
@@ -344,6 +359,45 @@ namespace BlogApp.Controllers
             await _context.SaveChangesAsync();
             return Ok(new { comment.Likes, comment.Dislikes });
         }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> RatePost(int postId, int rating)
+        {
+            if (rating < 0 || rating > 5) return BadRequest();
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var existing = await _context.PostRatings
+                .FirstOrDefaultAsync(r => r.PostId == postId && r.UserId == userId);
+
+            if (existing != null)
+            {
+                existing.Rating = rating;
+            }
+            else
+            {
+                _context.PostRatings.Add(new PostRating
+                {
+                    PostId = postId,
+                    UserId = userId,
+                    Rating = rating
+                });
+            }
+
+            await _context.SaveChangesAsync();
+            
+            var averageRating = await _context.PostRatings
+                .Where(r => r.PostId == postId)
+                .AverageAsync(r => (double)r.Rating);
+
+            return Json(new { 
+                success = true, 
+                averageRating = averageRating 
+            });
+        }
+
+        
+
 
 
     }

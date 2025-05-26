@@ -17,7 +17,8 @@ namespace BlogApp.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<PostVote> PostVotes { get; set; }
         public DbSet<PostTag> PostTags { get; set; }
-
+        public DbSet<PostViewHistory> PostViewHistories { get; set; }
+        public DbSet<PostRating> PostRatings { get; set; }
         public DbSet<CommentVote> CommentVotes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

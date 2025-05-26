@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using BlogApp.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace BlogApp.Models
 {
@@ -17,7 +19,9 @@ namespace BlogApp.Models
         public virtual ICollection<PostVote> Votes { get; set; } = new List<PostVote>();
         public string? ImagePath { get; set; }
         public ICollection<PostTag> PostTags { get; set; } = new List<PostTag>();
-
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
+        [NotMapped]
+        public double? AverageRating { get; set; }
+
     }
 }
