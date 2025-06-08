@@ -25,7 +25,7 @@ namespace BlogApp.Controllers
             {
                 PostId = postId,
                 Content = content,
-                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) // Pobieramy UserId
+                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) 
             };
 
             if (imageFile != null && imageFile.Length > 0)
@@ -86,7 +86,6 @@ namespace BlogApp.Controllers
             {
                 comment.Content = content;
 
-                // Przetwórz obrazek, jeśli został dodany
                 if (imageFile != null && imageFile.Length > 0)
                 {
                     comment.ImagePath = await ProcessImage(imageFile);
@@ -95,7 +94,6 @@ namespace BlogApp.Controllers
                 _context.Update(comment);
                 await _context.SaveChangesAsync();
 
-                // Po edycji przekieruj do szczegółów posta
                 return RedirectToAction("Details", "Posts", new { id = comment.PostId });
             }
 
@@ -114,7 +112,7 @@ namespace BlogApp.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (comment == null || (comment.UserId != userId && !User.IsInRole("Admin")))
-    return Forbid();
+            return Forbid();
             if (comment == null)
             {
                 return NotFound();

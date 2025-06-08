@@ -13,10 +13,10 @@ namespace BlogApp.Models
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public string UserId { get; set; } = string.Empty; // Autor komentarza
+        public string UserId { get; set; } = string.Empty;
         public IdentityUser User { get; set; }
 
-        public int PostId { get; set; } // Powiązanie z postem
+        public int PostId { get; set; }
         public Post Post { get; set; } = null!;
 
         public string? ImagePath { get; set; }

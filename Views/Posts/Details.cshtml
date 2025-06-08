@@ -120,14 +120,13 @@
                         </button>
                          <br />
                          <br />
-                         @if (Model.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
-                     {
-                            <span class="float-end">
-                                <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-outline-warning btn-sm">Edit</a>
-                                <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-outline-danger btn-sm">Delete</a>
-                            </span>
-                        }
-                                           
+                         @if (c.UserId == UserManager.GetUserId(User) || User.IsInRole("Admin"))
+                            {
+                                <span class="float-end">
+                                    <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-outline-warning btn-sm">Edit</a>
+                                    <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+                                </span>
+                            }              
                     </div>
                 </li>
             }
@@ -199,7 +198,6 @@
             const stars = document.querySelectorAll('.star-rating i');
             const ratingInput = document.getElementById('ratingInput');
             
-            // Inicjalizacja gwiazdek na podstawie istniejącej oceny
             const initialRating = parseInt(ratingInput.value);
             highlightStars(initialRating);
 
@@ -219,7 +217,6 @@
                     ratingInput.value = val;
                     highlightStars(val);
                     
-                    // Wysyłanie oceny przez AJAX
                     try {
                         const formData = new FormData(document.getElementById('ratingForm'));
                         const response = await fetch('/Posts/RatePost', {
@@ -231,7 +228,6 @@
                         });
                         
                         if (response.ok) {
-                            // Odświeżenie średniej oceny
                             const data = await response.json();
                             if (data.averageRating) {
                                 updateAverageRating(data.averageRating);
@@ -252,11 +248,9 @@
             }
             
             function updateAverageRating(average) {
-                // Tutaj możesz zaktualizować wyświetlaną średnią ocen
                 document.querySelector('.rating-display .text-muted').textContent = 
                     `(${average.toFixed(1)} / 5)`;
                 
-                // Aktualizacja gwiazdek średniej oceny
                 const fullStars = Math.floor(average);
                 const hasHalfStar = average - fullStars >= 0.5;
                 

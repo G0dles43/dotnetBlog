@@ -164,7 +164,7 @@ html.dark-mode .text-muted {
 }
 
 .star-rating i.selected,
-.star-rating i:hover,
+.star-rating i:hover,a
 .star-rating i.hovered {
   color: gold;
 }

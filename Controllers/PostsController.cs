@@ -88,13 +88,11 @@ namespace BlogApp.Controllers
 
                 post.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-                // Dodaj wybrane tagi
                 foreach (var tagId in selectedTags)
                 {
                     post.PostTags.Add(new PostTag { TagId = tagId });
                 }
 
-                // Obsługa nowych tagów (z pola tekstowego, np. "asp.net, c#, ef")
                 if (!string.IsNullOrWhiteSpace(newTags))
                 {
                     var tags = newTags
@@ -109,7 +107,7 @@ namespace BlogApp.Controllers
                         {
                             tag = new Tag { Name = tagName };
                             _context.Tags.Add(tag);
-                            await _context.SaveChangesAsync(); // Potrzebne, żeby mieć ID
+                            await _context.SaveChangesAsync(); 
                         }
 
                         if (!post.PostTags.Any(pt => pt.TagId == tag.Id))
@@ -125,7 +123,6 @@ namespace BlogApp.Controllers
                 return RedirectToAction("Details", "Blogs", new { id = post.BlogId });
             }
 
-            // Jeśli błąd - załaduj tagi ponownie
             ViewBag.AvailableTags = _context.Tags
                 .Select(t => new SelectListItem { Value = t.Id.ToString(), Text = t.Name })
                 .ToList();
@@ -152,7 +149,6 @@ namespace BlogApp.Controllers
                 return NotFound();
             }
 
-            // Dodaj listę blogów do ViewBag.Blogs
             ViewBag.Blogs = new SelectList(_context.Blogs, "Id", "Title", post.BlogId);
 
             return View(post);
@@ -251,15 +247,14 @@ namespace BlogApp.Controllers
 
             if (post != null)
             {
-                var blogId = post.BlogId;  // Pobieramy BlogId powiązane z postem
+                var blogId = post.BlogId;  
                 _context.Posts.Remove(post);
                 await _context.SaveChangesAsync();
                 
-                // Po usunięciu postu przekierowujemy do widoku Details bloga
                 return RedirectToAction("Details", "Blogs", new { id = blogId });
             }
 
-            return NotFound();  // Jeśli post nie istnieje, zwróć NotFound
+            return NotFound();
         }
         [HttpPost]
         [Authorize]

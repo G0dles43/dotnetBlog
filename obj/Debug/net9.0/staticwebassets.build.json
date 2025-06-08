@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OXAJHIuKCIdGw5ed/C036l2xQT9rQceMnOZmCS7TNio=",
+  "Hash": "l5zHWClbhLCQdv2atli6PVuZ5hKJM1jQMoXQlFPzCxc=",
   "Source": "BlogApp",
   "BasePath": "_content/BlogApp",
   "Mode": "Default",
@@ -3020,12 +3020,12 @@
       "OriginalItemSpec": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-c629bgfdqc.gz",
+      "Identity": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-jkji5jmnkv.gz",
       "SourceId": "BlogApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/BlogApp",
-      "RelativePath": "css/site#[.{fingerprint=c629bgfdqc}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=jkji5jmnkv}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -3034,8 +3034,8 @@
       "RelatedAsset": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "to5cyts3fn",
-      "Integrity": "M+I/rUDiBNX7iF4A1ODhcDPEy7XqnygNwJPdG2fs7bQ=",
+      "Fingerprint": "2c7g0eusul",
+      "Integrity": "ImHlkwPMxOUnHahVpyeJb/FU27Mv1HJiWm+RQWZAWU4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\css\\site.css"
@@ -4042,8 +4042,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c629bgfdqc",
-      "Integrity": "RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M=",
+      "Fingerprint": "jkji5jmnkv",
+      "Integrity": "bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -6621,167 +6621,6 @@
       ]
     },
     {
-      "Route": "css/site.c629bgfdqc.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-c629bgfdqc.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000993048659"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1006"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+I/rUDiBNX7iF4A1ODhcDPEy7XqnygNwJPdG2fs7bQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 17:28:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c629bgfdqc"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.c629bgfdqc.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "3334"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 17:28:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c629bgfdqc"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.c629bgfdqc.css.gz",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-c629bgfdqc.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1006"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+I/rUDiBNX7iF4A1ODhcDPEy7XqnygNwJPdG2fs7bQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 17:28:37 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c629bgfdqc"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-M+I/rUDiBNX7iF4A1ODhcDPEy7XqnygNwJPdG2fs7bQ="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.4\\staticwebassets\\css\\site.css",
       "Selectors": [],
@@ -6820,7 +6659,7 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-c629bgfdqc.gz",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-jkji5jmnkv.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
@@ -6839,11 +6678,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"M+I/rUDiBNX7iF4A1ODhcDPEy7XqnygNwJPdG2fs7bQ=\""
+          "Value": "\"ImHlkwPMxOUnHahVpyeJb/FU27Mv1HJiWm+RQWZAWU4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 17:28:37 GMT"
+          "Value": "Tue, 27 May 2025 07:08:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6863,13 +6702,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M=\""
+          "Value": "W/\"bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M="
+          "Value": "sha256-bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk="
         }
       ]
     },
@@ -6884,7 +6723,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3334"
+          "Value": "3335"
         },
         {
           "Name": "Content-Type",
@@ -6892,11 +6731,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M=\""
+          "Value": "\"bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 17:28:37 GMT"
+          "Value": "Tue, 27 May 2025 07:08:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6906,13 +6745,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RM6fLK8oMp0ikG1ppKRigise8d80ezlSn2z+fndZS0M="
+          "Value": "sha256-bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-c629bgfdqc.gz",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-jkji5jmnkv.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6929,11 +6768,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"M+I/rUDiBNX7iF4A1ODhcDPEy7XqnygNwJPdG2fs7bQ=\""
+          "Value": "\"ImHlkwPMxOUnHahVpyeJb/FU27Mv1HJiWm+RQWZAWU4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 26 May 2025 17:28:37 GMT"
+          "Value": "Tue, 27 May 2025 07:08:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6951,7 +6790,168 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-M+I/rUDiBNX7iF4A1ODhcDPEy7XqnygNwJPdG2fs7bQ="
+          "Value": "sha256-ImHlkwPMxOUnHahVpyeJb/FU27Mv1HJiWm+RQWZAWU4="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.jkji5jmnkv.css",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-jkji5jmnkv.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000993048659"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1006"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ImHlkwPMxOUnHahVpyeJb/FU27Mv1HJiWm+RQWZAWU4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 07:08:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jkji5jmnkv"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.jkji5jmnkv.css",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3335"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 07:08:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jkji5jmnkv"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bVuFmTtnhP7K3SSpZXJVjgdKz4f2C5cUsTE0pM65Vuk="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.jkji5jmnkv.css.gz",
+      "AssetFile": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\Debug\\net9.0\\compressed\\pn8uwchdow-jkji5jmnkv.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1006"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ImHlkwPMxOUnHahVpyeJb/FU27Mv1HJiWm+RQWZAWU4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 27 May 2025 07:08:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jkji5jmnkv"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ImHlkwPMxOUnHahVpyeJb/FU27Mv1HJiWm+RQWZAWU4="
         }
       ]
     },

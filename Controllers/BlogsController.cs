@@ -165,14 +165,12 @@ namespace BlogApp.Controllers
             ViewBag.CurrentSort = sortOrder;
             var posts = blog.Posts.AsQueryable();
 
-            // Filtrowanie po tagu (jeśli używasz tagów)
             if (tagId.HasValue)
             {
                 posts = posts.Where(p => p.PostTags.Any(pt => pt.TagId == tagId.Value));
                 ViewBag.SelectedTag = await _context.Tags.FindAsync(tagId.Value);
             }
 
-            // Sortowanie
             switch (sortOrder)
             {
                 case "name_desc":
@@ -189,7 +187,7 @@ namespace BlogApp.Controllers
                     break;
             }
 
-            blog.Posts = posts.ToList(); // Przekształć z IQueryable do List
+            blog.Posts = posts.ToList(); 
 
             return View(blog);
         }

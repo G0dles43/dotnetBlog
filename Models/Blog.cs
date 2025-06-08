@@ -11,7 +11,7 @@ namespace BlogApp.Models
 
         public string Description { get; set; } = string.Empty;
 
-        public string UserId { get; set; } = string.Empty; // Powiązanie z właścicielem (IdentityUser)
+        public string UserId { get; set; } = string.Empty; 
 
         public ICollection<Post> Posts { get; set; } = new List<Post>();
     }
