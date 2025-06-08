@@ -27,12 +27,11 @@
 
     <p class="text-muted">Posted on @Model.CreatedAt.ToString("g") • Views: @Model.ViewCount</p>
 
-    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    @if (Model.ImageData != null)
     {
-        <div class="mb-4">
-            <img src="@Model.ImagePath" alt="Post image test" style="width:300px;" />
-        </div>
+        <img src="@Url.Action("GetPostImage", "Posts", new { id = Model.Id })" class="post-image" />
     }
+
     <form method="post" asp-controller="Posts" asp-action="RatePost" id="ratingForm">
         <input type="hidden" name="postId" value="@Model.Id" />
         <input type="hidden" name="rating" id="ratingInput" value="@ViewBag.UserRating" />
@@ -57,18 +56,25 @@
         }
     }
 
-    @if (Model.AverageRating.HasValue)
-    {
-        <div class="rating-display mb-3">
-            <strong>Average Rating:</strong>
-            <span class="text-warning">
+    <div class="rating-display mb-3">
+        <strong>Average Rating:</strong>
+        <span class="text-warning">
+            @if (Model.AverageRating.HasValue)
+            {
                 @for (int i = 0; i < fullStars; i++) { <i class="fas fa-star"></i> }
                 @if (halfStar) { <i class="fas fa-star-half-alt"></i> }
                 @for (int i = 0; i < emptyStars; i++) { <i class="far fa-star"></i> }
-            </span>
-            <span class="text-muted">(@Model.AverageRating.Value.ToString("0.0") / 5)</span>
-        </div>
-    }
+            }
+            else
+            {
+                @for (int i = 0; i < 5; i++) { <i class="far fa-star"></i> }
+            }
+        </span>
+        <span class="text-muted">
+            (@(Model.AverageRating?.ToString("0.0") ?? "0.0") / 5)
+        </span>
+    </div>
+
 
 
 
@@ -100,12 +106,11 @@
 
                     <div style="font-size: 1.1rem;">@c.Content</div>
 
-                    @if (!string.IsNullOrEmpty(c.ImagePath))
+                    @if (c.ImageData != null)
                     {
-                        <div class="mt-2">
-                            <img src="@c.ImagePath" class="fixed-image" alt="Comment image" />
-                        </div>
+                        <img src="@Url.Action("GetCommentImage", "Comments", new { id = c.Id })" class="fixed-image" />
                     }
+
 
                     <br />
 
@@ -248,8 +253,9 @@
             }
             
             function updateAverageRating(average) {
-                document.querySelector('.rating-display .text-muted').textContent = 
+                document.querySelector('.rating-display .text-muted').textContent =
                     `(${average.toFixed(1)} / 5)`;
+
                 
                 const fullStars = Math.floor(average);
                 const hasHalfStar = average - fullStars >= 0.5;

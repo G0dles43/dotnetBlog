@@ -25,12 +25,15 @@ namespace BlogApp.Controllers
             {
                 PostId = postId,
                 Content = content,
-                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) 
+                UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)
             };
 
             if (imageFile != null && imageFile.Length > 0)
             {
-                comment.ImagePath = await ProcessImage(imageFile);
+                using var memoryStream = new MemoryStream();
+                await imageFile.CopyToAsync(memoryStream);
+                comment.ImageData = memoryStream.ToArray();
+                comment.ImageMimeType = imageFile.ContentType;
             }
 
             _context.Comments.Add(comment);
@@ -43,7 +46,7 @@ namespace BlogApp.Controllers
         {
             var uploadsFolder = Path.Combine("wwwroot", "uploads");
             Directory.CreateDirectory(uploadsFolder);
-            
+
             var uniqueFileName = Guid.NewGuid().ToString() + "_" + imageFile.FileName;
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
@@ -88,7 +91,10 @@ namespace BlogApp.Controllers
 
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    comment.ImagePath = await ProcessImage(imageFile);
+                    using var memoryStream = new MemoryStream();
+                    await imageFile.CopyToAsync(memoryStream);
+                    comment.ImageData = memoryStream.ToArray();
+                    comment.ImageMimeType = imageFile.ContentType;
                 }
 
                 _context.Update(comment);
@@ -112,7 +118,7 @@ namespace BlogApp.Controllers
                 .FirstOrDefaultAsync(m => m.Id == id);
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (comment == null || (comment.UserId != userId && !User.IsInRole("Admin")))
-            return Forbid();
+                return Forbid();
             if (comment == null)
             {
                 return NotFound();
@@ -120,7 +126,7 @@ namespace BlogApp.Controllers
 
             return View(comment);
         }
-        
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -135,6 +141,17 @@ namespace BlogApp.Controllers
             }
             return NotFound();
         }
+        
+        [AllowAnonymous]
+        public async Task<IActionResult> GetCommentImage(int id)
+        {
+            var comment = await _context.Comments.FindAsync(id);
+            if (comment?.ImageData == null || comment.ImageMimeType == null)
+                return NotFound();
+
+            return File(comment.ImageData, comment.ImageMimeType);
+        }
+
         
     }
 }

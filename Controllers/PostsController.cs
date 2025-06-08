@@ -83,7 +83,10 @@ namespace BlogApp.Controllers
             {
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    post.ImagePath = await ProcessImage(imageFile);
+                    using var memoryStream = new MemoryStream();
+                    await imageFile.CopyToAsync(memoryStream);
+                    post.ImageData = memoryStream.ToArray();
+                    post.ImageMimeType = imageFile.ContentType;
                 }
 
                 post.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -176,7 +179,10 @@ namespace BlogApp.Controllers
 
             if (imageFile != null && imageFile.Length > 0)
             {
-                postInDb.ImagePath = await ProcessImage(imageFile);
+                using var memoryStream = new MemoryStream();
+                await imageFile.CopyToAsync(memoryStream);
+                postInDb.ImageData = memoryStream.ToArray();
+                postInDb.ImageMimeType = imageFile.ContentType;
             }
 
             try
@@ -391,9 +397,14 @@ namespace BlogApp.Controllers
             });
         }
 
-        
+        [AllowAnonymous]
+        public async Task<IActionResult> GetPostImage(int id)
+        {
+            var post = await _context.Posts.FindAsync(id);
+            if (post?.ImageData == null || post.ImageMimeType == null)
+                return NotFound();
 
-
-
+            return File(post.ImageData, post.ImageMimeType);
+        }
     }
 }

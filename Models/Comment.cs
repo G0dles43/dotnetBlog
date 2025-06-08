@@ -19,7 +19,8 @@ namespace BlogApp.Models
         public int PostId { get; set; }
         public Post Post { get; set; } = null!;
 
-        public string? ImagePath { get; set; }
+        public byte[]? ImageData { get; set; }
+        public string? ImageMimeType { get; set; }
 
         public int Likes { get; set; } = 0;
         public int Dislikes { get; set; } = 0;

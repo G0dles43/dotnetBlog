@@ -81,6 +81,39 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
+    string adminEmail = "admin@admin.pl";
+    string adminPassword = "admin123"; 
+
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
+    if (adminUser == null)
+    {
+        adminUser = new IdentityUser
+        {
+            UserName = "SuperAdmin",
+            Email = adminEmail,
+            EmailConfirmed = true 
+        };
+
+        var result = await userManager.CreateAsync(adminUser, adminPassword);
+
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(adminUser, "Admin");
+        }
+        else
+        {
+            var errors = string.Join(", ", result.Errors.Select(e => e.Description));
+            Console.WriteLine($"Error creating admin user: {errors}");
+        }
+    }
+    else
+    {
+        if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
+        {
+            await userManager.AddToRoleAsync(adminUser, "Admin");
+        }
+    }
 }
+
 
 app.Run();

@@ -17,7 +17,8 @@ namespace BlogApp.Models
         public int Dislikes { get; set; } = 0;
         public string UserId { get; set; } = string.Empty;
         public virtual ICollection<PostVote> Votes { get; set; } = new List<PostVote>();
-        public string? ImagePath { get; set; }
+        public byte[]? ImageData { get; set; }
+        public string? ImageMimeType { get; set; }
         public ICollection<PostTag> PostTags { get; set; } = new List<PostTag>();
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
         [NotMapped]

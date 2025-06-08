@@ -11,10 +11,10 @@
     <div class="mb-3">
         <strong>Comment Content:</strong>
         <p>@Model.Content</p>
-        @if (!string.IsNullOrEmpty(Model.ImagePath))
+        @if (Model.ImageData != null)
         {
             <div>
-                <img src="@Model.ImagePath" class="fixed-image" alt="Comment image" />
+                <img src="@Url.Action("GetCommentImage", "Comments", new { id = Model.Id })" class="fixed-image" alt="Comment image" />
             </div>
         }
     </div>

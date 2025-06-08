@@ -164,7 +164,17 @@ html.dark-mode .text-muted {
 }
 
 .star-rating i.selected,
-.star-rating i:hover,a
-.star-rating i.hovered {
+.star-rating i:hover,
+a .star-rating i.hovered {
   color: gold;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 700px;
+  display: block;
+  margin-top: 10px;
+  border-radius: 10px;
+  object-fit: cover;
 }

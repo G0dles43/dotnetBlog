@@ -56,7 +56,10 @@ namespace BlogApp.Migrations
                     b.Property<int>("Dislikes")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("ImagePath")
+                    b.Property<byte[]>("ImageData")
+                        .HasColumnType("BLOB");
+
+                    b.Property<string>("ImageMimeType")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Likes")
@@ -97,7 +100,10 @@ namespace BlogApp.Migrations
                     b.Property<int>("Dislikes")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("ImagePath")
+                    b.Property<byte[]>("ImageData")
+                        .HasColumnType("BLOB");
+
+                    b.Property<string>("ImageMimeType")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Likes")
