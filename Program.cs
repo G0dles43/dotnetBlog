@@ -11,7 +11,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddRoles<IdentityRole>() 
     .AddEntityFrameworkStores<AppDbContext>();
 
@@ -68,52 +68,37 @@ app.MapRazorPages()
 
 using (var scope = app.Services.CreateScope())
 {
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-    string[] roles = new[] { "Admin", "User" };
+    string email = "admin@akd.pl";
+    string username = "SuperAdmin2";
+    string password = "Admin123!";
+    string role = "Admin";
 
-    foreach (var role in roles)
+    if (!await roleManager.RoleExistsAsync(role))
+        await roleManager.CreateAsync(new IdentityRole(role));
+
+    var userByEmail = await userManager.FindByEmailAsync(email);
+    var userByName = await userManager.FindByNameAsync(username);
+
+    if (userByEmail == null && userByName == null)
     {
-        if (!await roleManager.RoleExistsAsync(role))
+        var user = new IdentityUser
         {
-            await roleManager.CreateAsync(new IdentityRole(role));
-        }
-    }
-
-    string adminEmail = "admin@admin.pl";
-    string adminPassword = "admin123"; 
-
-    var adminUser = await userManager.FindByEmailAsync(adminEmail);
-    if (adminUser == null)
-    {
-        adminUser = new IdentityUser
-        {
-            UserName = "SuperAdmin",
-            Email = adminEmail,
-            EmailConfirmed = true 
+            UserName = username,
+            Email = email,
+            EmailConfirmed = true
         };
 
-        var result = await userManager.CreateAsync(adminUser, adminPassword);
-
+        var result = await userManager.CreateAsync(user, password);
         if (result.Succeeded)
         {
-            await userManager.AddToRoleAsync(adminUser, "Admin");
-        }
-        else
-        {
-            var errors = string.Join(", ", result.Errors.Select(e => e.Description));
-            Console.WriteLine($"Error creating admin user: {errors}");
-        }
-    }
-    else
-    {
-        if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
-        {
-            await userManager.AddToRoleAsync(adminUser, "Admin");
+            await userManager.AddToRoleAsync(user, role);
         }
     }
 }
+
 
 
 app.Run();
