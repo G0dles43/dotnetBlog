@@ -1,9 +1,23 @@
 @model IEnumerable<BlogApp.Models.Comment>
-@foreach(var c in Model) {
-    <div class="card mb-2">
-      <div class="card-body">
-        <p>@c.Content</p>
-        <small class="text-muted">by @c.UserId on @c.CreatedAt.ToString("g")</small>
-      </div>
+
+@foreach (var c in Model) {
+  <div class="card mb-2">
+    <div class="card-body">
+      <p>@c.Content</p>
+
+      @* Wyświetl obrazek zakodowany base64 *@
+      @if (c.ImageData != null && c.ImageMimeType != null) {
+        var b64 = Convert.ToBase64String(c.ImageData);
+        var src = $"data:{c.ImageMimeType};base64,{b64}";
+        <img class="comment-image"
+             src="@src"
+             alt="Zdjęcie z komentarza"
+             style="max-width:200px; max-height:150px;" />
+      }
+
+      <small class="text-muted">
+        by @c.UserId on @c.CreatedAt.ToString("g")
+      </small>
     </div>
+  </div>
 }

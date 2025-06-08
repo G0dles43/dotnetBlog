@@ -68,3 +68,28 @@ button.accept-policy:hover[b-gr6vkwv4lw] {
   margin-top: 10px;
   font-style: italic;
 }
+
+#img-modal[b-gr6vkwv4lw] {
+  display: none;          /* ukryj domyślnie */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  /* flex dopiero po kliknięciu: JS ustawi display:flex */
+  align-items: center;
+  justify-content: center;
+}
+
+#img-modal .modal-content[b-gr6vkwv4lw] {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#img-modal .close-btn[b-gr6vkwv4lw] {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}

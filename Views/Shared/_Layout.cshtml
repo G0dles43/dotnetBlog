@@ -1,91 +1,119 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BlogApp</title>
-    <script type="importmap"></script>
-    <script>
-        (function () {
-            try {
-                const theme = localStorage.getItem('theme');
-                if (theme === 'dark') {
-                    document.documentElement.classList.add('dark-mode');
-                }
-            } catch (e) {}
-        })();
-    </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BlogApp.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - BlogApp</title>
 
+  <!-- motyw -->
+  <script type="importmap"></script>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+        }
+      } catch {}
+    })();
+  </script>
+
+  <!-- style i ikony -->
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/BlogApp.styles.css" asp-append-version="true" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container">
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container">
         <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BlogApp</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <button id="themeToggle" class="btn btn-outline-secondary ms-3" title="Zmień motyw">
-            <i id="themeIcon" class="bi bi-brightness-high"></i>
+          <i id="themeIcon" class="bi bi-brightness-high"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            </ul>
-            @await Html.PartialAsync("_LoginPartial")
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          @await Html.PartialAsync("_LoginPartial")
         </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main role="main" class="pb-3">
+      @RenderBody()
+    </main>
+  </div>
+
+  <footer class="border-top footer text-muted">
+    <div class="credits">
+      &copy; 2025 - Cezary Babik, Bartosz Godlewski
     </div>
-</nav>
+  </footer>
 
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+  <!-- skrypty -->
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  @await RenderSectionAsync("Scripts", required: false)
 
-    <footer class="border-top footer text-muted">
-        <div class="credits">
-            &copy; 2025 - Cezary Babik, Bartosz Godlewski
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const themeToggle = document.getElementById('themeToggle');
-            const themeIcon = document.getElementById('themeIcon');
-            const currentTheme = localStorage.getItem('theme');
+  <!-- lightbox modal -->
+  <div id="img-modal" class="d-none">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" src="" alt="Powiększone zdjęcie" />
+  </div>
 
-            function applyIcon(theme) {
-                if (theme === 'dark') {
-                    document.documentElement.classList.add('dark-mode');
-                    themeIcon.classList.replace('bi-brightness-high', 'bi-moon');
-                } else {
-                    document.documentElement.classList.remove('dark-mode');
-                    themeIcon.classList.replace('bi-moon', 'bi-brightness-high');
-                }
-            }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Theme toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      function applyIcon(t) {
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+          themeIcon.classList.replace('bi-brightness-high','bi-moon');
+        } else {
+          document.documentElement.classList.remove('dark-mode');
+          themeIcon.classList.replace('bi-moon','bi-brightness-high');
+        }
+      }
+      applyIcon(localStorage.getItem('theme'));
+      themeToggle?.addEventListener('click', () => {
+        const newTheme = document.documentElement.classList.toggle('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+        applyIcon(newTheme);
+      });
 
-            applyIcon(currentTheme);
+      // Lightbox
+      const modal = document.getElementById('img-modal');
+      const modalImg = modal.querySelector('img.modal-content');
+      const closeBtn = modal.querySelector('.close-btn');
 
-            themeToggle?.addEventListener('click', () => {
-                const isDark = document.documentElement.classList.toggle('dark-mode');
-                const newTheme = isDark ? 'dark' : 'light';
-                localStorage.setItem('theme', newTheme);
-                applyIcon(newTheme);
-            });
+      document.querySelectorAll('.fixed-image').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+          modalImg.src = img.src;
+          modal.classList.remove('d-none');
+          modal.classList.add('d-flex');
         });
-    </script>
+      });
 
-
+      function hideModal() {
+        modal.classList.add('d-none');
+        modal.classList.remove('d-flex');
+      }
+      closeBtn.addEventListener('click', hideModal);
+      modal.addEventListener('click', e => {
+        if (e.target === modal) hideModal();
+      });
+    });
+  </script>
 </body>
 </html>

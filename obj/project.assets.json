@@ -7276,24 +7276,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\barte\\.nuget\\packages\\": {}
+    "C:\\Users\\CzaroAmaro\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
+      "projectUniqueName": "C:\\Users\\CzaroAmaro\\Desktop\\C#blog\\dotnetBlog\\BlogApp.csproj",
       "projectName": "BlogApp",
-      "projectPath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\BlogApp.csproj",
-      "packagesPath": "C:\\Users\\barte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\barte\\Desktop\\programowanie\\BlogApp\\obj\\",
+      "projectPath": "C:\\Users\\CzaroAmaro\\Desktop\\C#blog\\dotnetBlog\\BlogApp.csproj",
+      "packagesPath": "C:\\Users\\CzaroAmaro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\CzaroAmaro\\Desktop\\C#blog\\dotnetBlog\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\barte\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\CzaroAmaro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
