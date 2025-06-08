@@ -3,12 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using BlogApp.Data;
 using Microsoft.Extensions.FileProviders;
 using BlogApp.Areas.Identity;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -83,7 +85,6 @@ using (var scope = app.Services.CreateScope())
 
     string adminEmail = "admin@admin.pl";
     string adminPassword = "admin123"; 
-
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)
     {
