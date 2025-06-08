@@ -6,37 +6,44 @@
     ViewData["Title"] = "Welcome";
 }
 
-<div class="d-flex vh-100 align-items-center justify-content-center">
-    <div class="text-center">
-        <h1>Welcome to BlogApp</h1>
+<div class="container d-flex vh-100 align-items-center justify-content-center">
+    <div class="text-center limited-width">
+        <div class="mb-4 p-4 rounded-4 shadow-sm" style="
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);">
+            
+            <h4 class="mb-3">
+                Daily Joke
+            </h4>
 
-        <div id="daily-joke" class="alert alert-warning mt-4" role="alert">
-            <strong>Daily joke</strong>
-            <div id="joke-content">Joke loading...</div>
+            <div id="joke-content" class="fs-5">Loading joke...</div>
         </div>
 
+        <h1 class="mb-4">Welcome to <span class="text-primary">BlogApp</span></h1>
 
-        <p class="mt-4">
-            <a asp-controller="Blogs" asp-action="Index" class="btn btn-lg btn-primary">
-                See all blogs
-            </a>
-        </p>
+        <a asp-controller="Blogs" asp-action="Index" class="btn btn-lg btn-outline-primary">
+            See all blogs
+        </a>
     </div>
 </div>
-<script>
-    fetch('/Home/DailyJoke')
-        .then(res => res.json())
-        .then(data => {
-            const jokeDiv = document.getElementById('joke-content');
-            if (data.error) {
-                jokeDiv.textContent = "Nie udało się załadować dowcipu 😢";
-            } else if (data.type === "twopart") {
-                jokeDiv.innerHTML = `<strong>${data.setup}</strong><br>${data.delivery}`;
-            } else {
-                jokeDiv.textContent = data.joke;
-            }
-        })
-        .catch(() => {
-            document.getElementById('joke-content').textContent = "Błąd ładowania dowcipu 😢";
-        });
-</script>
+
+@section Scripts {
+    <script>
+        fetch('/Home/DailyJoke')
+            .then(res => res.json())
+            .then(data => {
+                const jokeDiv = document.getElementById('joke-content');
+                if (data.error) {
+                    jokeDiv.textContent = "Couldn't load joke.";
+                } else if (data.type === "twopart") {
+                    jokeDiv.innerHTML = `<strong>${data.setup}</strong><br>${data.delivery}`;
+                } else {
+                    jokeDiv.textContent = data.joke;
+                }
+            })
+            .catch(() => {
+                document.getElementById('joke-content').textContent = "Error loading joke.";
+            });
+    </script>
+}

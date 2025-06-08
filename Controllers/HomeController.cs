@@ -35,6 +35,16 @@ public class HomeController : Controller
     [HttpGet]
     public async Task<IActionResult> DailyJoke()
     {
+        const string sessionKey = "DailyJoke";
+        const string dateKey = "DailyJokeDate";
+        var today = DateTime.UtcNow.Date;
+
+        if (HttpContext.Session.GetString(sessionKey) is string storedJoke &&
+            HttpContext.Session.GetString(dateKey) == today.ToString("yyyy-MM-dd"))
+        {
+            return Content(storedJoke, "application/json");
+        }
+
         var client = _httpClientFactory.CreateClient();
         var response = await client.GetAsync("https://v2.jokeapi.dev/joke/Any?format=json");
 
@@ -42,7 +52,10 @@ public class HomeController : Controller
             return Json(new { error = "Error" });
 
         var json = await response.Content.ReadAsStringAsync();
+
+        HttpContext.Session.SetString(sessionKey, json);
+        HttpContext.Session.SetString(dateKey, today.ToString("yyyy-MM-dd"));
+
         return Content(json, "application/json");
     }
-
 }
