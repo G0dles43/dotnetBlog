@@ -37,7 +37,7 @@ namespace BlogApp.Controllers
                 case "posts_desc":
                     blogs = blogs.OrderByDescending(b => b.Posts.Count);
                     break;
-                default: // "name" - domyślnie
+                default: 
                     blogs = blogs.OrderBy(b => b.Title);
                     break;
             }
@@ -191,7 +191,5 @@ namespace BlogApp.Controllers
 
             return View(blog);
         }
-
-
     }
 }
