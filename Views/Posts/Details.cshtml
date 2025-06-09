@@ -1,6 +1,38 @@
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<IdentityUser> UserManager
+@inject IHttpContextAccessor HttpContextAccessor
 @model BlogApp.Models.Post
+
+@{
+    ViewData["Title"] = Model.Title;
+
+    var isAdmin = User.IsInRole("Admin");
+    var accessGranted = HttpContextAccessor.HttpContext?.Session.GetString($"PostAccess_{Model.Id}") == "true";
+}
+
+@if (Model.IsPrivate && !isAdmin && !accessGranted)
+{
+    <div class="alert alert-warning mt-3">
+        <h4>This post is private.</h4>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="text-danger">@TempData["Error"]</div>
+        }
+
+        <form method="post" asp-action="AccessPrivatePost">
+            <input type="hidden" name="postId" value="@Model.Id" />
+            <div class="mb-3">
+                <label for="password">Enter password:</label>
+                <input type="password" name="password" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Unlock</button>
+        </form>
+    </div>
+
+    return;
+}
+
 @{
     ViewData["Title"] = Model.Title;
 }
@@ -10,6 +42,10 @@
         <a asp-controller="Blogs" asp-action="Details" asp-route-id="@Model.BlogId" class="btn btn-secondary">Back to Posts</a>
     </div>
     <h1>@Model.Title</h1>
+    @if (Model.Category != null)
+    {
+        <p>Kategoria: @Model.Category.Name</p>
+    }
 
     <p class="text-muted">Posted on @Model.CreatedAt.ToString("g") • Views: @Model.ViewCount</p>
 
@@ -61,9 +97,6 @@
         </span>
     </div>
 
-
-
-
     <div class="mb-5">
         @Html.Raw(Model.Content.Replace("\n", "<br/>"))
         <div class="mt-3 vote-buttons">
@@ -74,7 +107,9 @@
                 <i class="bi bi-hand-thumbs-down"></i> <span class="count">@Model.Dislikes</span>
             </button>
         </div>
+        <a asp-controller="Reports" asp-action="Create" asp-route-postId="@Model.Id" class="btn btn-warning btn-sm">Report</a>
     </div>
+
 
     <h3>Comments</h3>
     @if (!Model.Comments.Any())
@@ -117,7 +152,9 @@
                                     <a asp-action="Edit" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-outline-warning btn-sm">Edit</a>
                                     <a asp-action="Delete" asp-controller="Comments" asp-route-id="@c.Id" class="btn btn-outline-danger btn-sm">Delete</a>
                                 </span>
-                            }              
+                            }
+                            <a asp-controller="Reports" asp-action="Create" asp-route-commentId="@c.Id" class="btn btn-outline-danger btn-sm">Report</a>
+              
                     </div>
                 </li>
             }
@@ -136,6 +173,7 @@
         </div>
         <button class="btn btn-primary">Post Comment</button>
     </form>
+
 </div>
 
 @section Scripts {

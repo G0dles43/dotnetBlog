@@ -24,5 +24,11 @@ namespace BlogApp.Models
         [NotMapped]
         public double? AverageRating { get; set; }
 
+        public int? CategoryId { get; set; }
+        public Category? Category { get; set; }
+
+        public bool IsPrivate { get; set; } = false;
+        public string? AccessPassword { get; set; }
+
     }
 }

@@ -37,7 +37,16 @@
           <i id="themeIcon" class="bi bi-brightness-high"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              @if (User.IsInRole("Admin"))
+              {
+                  <li class="nav-item">
+                      <a class="nav-link" asp-controller="Reports" asp-action="Index">
+                          Reports
+                      </a>
+                  </li>
+              }
+          </ul>
           @await Html.PartialAsync("_LoginPartial")
         </div>
       </div>
@@ -59,7 +68,7 @@
   <!-- skrypty -->
   <script src="~/lib/jquery/dist/jquery.min.js"></script>
   <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+  <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
   <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="~/js/site.js" asp-append-version="true"></script>
   @await RenderSectionAsync("Scripts", required: false)

@@ -34,6 +34,15 @@
         <label class="form-label">Add New Tags (comma separated)</label>
         <input type="text" name="newTags" class="form-control" placeholder="e.g. c#, blazor, api" />
     </div>
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="isPrivate" name="IsPrivate" value="true" />
+        <label class="form-check-label" for="isPrivate">Make post private</label>
+    </div>
+
+    <div class="mb-3" id="passwordField" style="display:none;">
+        <label for="AccessPassword" class="form-label">Password for private post</label>
+        <input type="password" class="form-control" id="AccessPassword" name="AccessPassword" />
+    </div>
 
     <div class="mb-3">
         <label class="form-label">Image (optional)</label>
@@ -46,4 +55,14 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkbox = document.getElementById('isPrivate');
+            const passwordField = document.getElementById('passwordField');
+
+            checkbox.addEventListener('change', function () {
+                passwordField.style.display = this.checked ? 'block' : 'none';
+            });
+        });
+    </script>
 }

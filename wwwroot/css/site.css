@@ -178,3 +178,84 @@ a .star-rating i.hovered {
   border-radius: 10px;
   object-fit: cover;
 }
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px var(--box-shadow-color);
+  font-size: 1rem;
+}
+
+.reports-table thead tr {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.reports-table th,
+.reports-table td {
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reports-table tbody tr:hover {
+  background-color: var(--btn-hover);
+  cursor: default;
+}
+
+.report-message {
+  max-width: 300px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.report-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.report-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+html.dark-mode .reports-table {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+  box-shadow: 0 0 10px var(--box-shadow-color);
+}
+
+html.dark-mode .reports-table thead tr {
+  background-color: #1a1a1a;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+html.dark-mode .reports-table th,
+html.dark-mode .reports-table td {
+  border-bottom: 1px solid var(--border-color);
+}
+
+html.dark-mode .reports-table tbody tr:hover {
+  background-color: #2a2a2a;
+  cursor: default;
+}
+
+html.dark-mode .report-link {
+  color: var(--text-color);
+}
+
+html.dark-mode .report-link:hover {
+  color: var(--link-hover);
+}

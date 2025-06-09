@@ -24,7 +24,7 @@ namespace BlogApp.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
-            
+
 
             var post = await _context.Posts
                 .Include(p => p.PostTags)
@@ -32,6 +32,22 @@ namespace BlogApp.Controllers
                 .Include(p => p.Comments)
                     .ThenInclude(c => c.User)
                 .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (post == null) return NotFound();
+
+            if (post.IsPrivate)
+            {
+                bool isAdmin = User.IsInRole("Admin");
+                
+                bool hasSessionAccess = HttpContext.Session.GetString($"PostAccess_{post.Id}") == "true";
+                
+                bool isOwner = User.Identity.IsAuthenticated && post.UserId == User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                if (!isAdmin && !hasSessionAccess && !isOwner)
+                {
+                    return View(post);
+                }
+            }
             
             post.AverageRating = await _context.PostRatings
                 .Where(r => r.PostId == post.Id)
@@ -45,7 +61,7 @@ namespace BlogApp.Controllers
             {
                 var userRating = await _context.PostRatings
                     .FirstOrDefaultAsync(r => r.PostId == post.Id && r.UserId == userId);
-                
+
                 ViewBag.UserRating = userRating?.Rating ?? 0;
             }
             else
@@ -56,7 +72,7 @@ namespace BlogApp.Controllers
         }
 
 
-        
+
 
 
         // GET: Posts/Create
@@ -66,6 +82,7 @@ namespace BlogApp.Controllers
                 return BadRequest("BlogId is required.");
 
             ViewBag.BlogId = blogId.Value;
+            ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name");
             ViewBag.AvailableTags = _context.Tags
                 .Select(t => new SelectListItem { Value = t.Id.ToString(), Text = t.Name })
                 .ToList();
@@ -74,11 +91,15 @@ namespace BlogApp.Controllers
         }
 
         // POST: Posts/Create
-        
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Content,BlogId")] Post post, string? newTags, List<int> selectedTags, IFormFile? imageFile)
+        public async Task<IActionResult> Create([Bind("Title,Content,BlogId,IsPrivate,AccessPassword")] Post post, string? newTags, List<int> selectedTags, IFormFile? imageFile)
         {
+            if (post.IsPrivate && string.IsNullOrWhiteSpace(post.AccessPassword) && !User.IsInRole("Admin"))
+            {
+                ModelState.AddModelError("AccessPassword", "Password is required for private posts.");
+            }
             if (ModelState.IsValid)
             {
                 if (imageFile != null && imageFile.Length > 0)
@@ -90,6 +111,11 @@ namespace BlogApp.Controllers
                 }
 
                 post.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                if (User.IsInRole("Admin") && post.IsPrivate)
+                {
+                    post.AccessPassword = null; 
+                }
 
                 foreach (var tagId in selectedTags)
                 {
@@ -110,7 +136,7 @@ namespace BlogApp.Controllers
                         {
                             tag = new Tag { Name = tagName };
                             _context.Tags.Add(tag);
-                            await _context.SaveChangesAsync(); 
+                            await _context.SaveChangesAsync();
                         }
 
                         if (!post.PostTags.Any(pt => pt.TagId == tag.Id))
@@ -153,6 +179,8 @@ namespace BlogApp.Controllers
             }
 
             ViewBag.Blogs = new SelectList(_context.Blogs, "Id", "Title", post.BlogId);
+            ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name");
+
 
             return View(post);
         }
@@ -201,12 +229,12 @@ namespace BlogApp.Controllers
         }
 
 
-        
+
         private async Task<string> ProcessImage(IFormFile imageFile)
         {
             var uploadsFolder = Path.Combine("wwwroot", "uploads");
             Directory.CreateDirectory(uploadsFolder);
-            
+
             var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(imageFile.FileName)}";
             var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
@@ -217,7 +245,7 @@ namespace BlogApp.Controllers
                     Size = new Size(800, 600),
                     Mode = ResizeMode.Max
                 }));
-                
+
                 await image.SaveAsync(filePath);
             }
 
@@ -253,10 +281,10 @@ namespace BlogApp.Controllers
 
             if (post != null)
             {
-                var blogId = post.BlogId;  
+                var blogId = post.BlogId;
                 _context.Posts.Remove(post);
                 await _context.SaveChangesAsync();
-                
+
                 return RedirectToAction("Details", "Blogs", new { id = blogId });
             }
 
@@ -386,14 +414,15 @@ namespace BlogApp.Controllers
             }
 
             await _context.SaveChangesAsync();
-            
+
             var averageRating = await _context.PostRatings
                 .Where(r => r.PostId == postId)
                 .AverageAsync(r => (double)r.Rating);
 
-            return Json(new { 
-                success = true, 
-                averageRating = averageRating 
+            return Json(new
+            {
+                success = true,
+                averageRating = averageRating
             });
         }
 
@@ -406,5 +435,23 @@ namespace BlogApp.Controllers
 
             return File(post.ImageData, post.ImageMimeType);
         }
-    }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AccessPrivatePost(int postId, string password)
+        {
+            var post = await _context.Posts.FindAsync(postId);
+            if (post == null)
+                return NotFound();
+
+            if (post.AccessPassword == password)
+            {
+                HttpContext.Session.SetString($"PostAccess_{post.Id}", "true");
+                return RedirectToAction("Details", new { id = post.Id });
+            }
+
+            TempData["Error"] = "Incorrect password.";
+            return RedirectToAction("Details", new { id = post.Id }); 
+        }
+    }    
 }
