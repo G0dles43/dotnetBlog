@@ -1,6 +1,6 @@
 C:\Users\barte\Desktop\programowanie\BlogApp\publish\appsettings.Development.json
 C:\Users\barte\Desktop\programowanie\BlogApp\publish\appsettings.json
-C:\Users\barte\Desktop\programowanie\BlogApp\publish\app.db
+C:\Users\barte\Desktop\programowanie\BlogApp\publish\libman.json
 C:\Users\barte\Desktop\programowanie\BlogApp\publish\LatoFont\Lato-Black.ttf
 C:\Users\barte\Desktop\programowanie\BlogApp\publish\LatoFont\Lato-BlackItalic.ttf
 C:\Users\barte\Desktop\programowanie\BlogApp\publish\LatoFont\Lato-Bold.ttf

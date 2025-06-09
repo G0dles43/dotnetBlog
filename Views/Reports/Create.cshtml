@@ -1,78 +1,26 @@
-@model BlogApp.Models.Post
 @{
-    ViewData["Title"] = "Create Post";
-    var tags = ViewBag.AvailableTags as List<SelectListItem>;
+    ViewData["Title"] = "Report Content";
 }
 
-<form asp-action="Create" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="BlogId" value="@ViewBag.BlogId" />
+<h2>Report a Post or Comment</h2>
+
+<form asp-action="Create" method="post">
+    <input type="hidden" name="postId" value="@ViewBag.PostId" />
+    <input type="hidden" name="commentId" value="@ViewBag.CommentId" />
 
     <div class="mb-3">
-        <label asp-for="Title" class="form-label"></label>
-        <input asp-for="Title" class="form-control" />
-        <span asp-validation-for="Title" class="text-danger"></span>
+        <label for="content" class="form-label">Reason for Report</label>
+        <textarea name="content" class="form-control" rows="4" placeholder="Describe the issue..."></textarea>
     </div>
 
-    <div class="mb-3">
-        <label asp-for="Content" class="form-label"></label>
-        <textarea asp-for="Content" class="form-control" rows="4"></textarea>
-        <span asp-validation-for="Content" class="text-danger"></span>
-    </div>
+    <button type="submit" class="btn btn-danger">Submit Report</button>
 
-    <div class="mb-3">
-        <label class="form-label">Select Tags</label>
-        <select name="selectedTags" class="form-select" multiple>
-            @foreach (var tag in tags)
-            {
-                <option value="@tag.Value">@tag.Text</option>
-            }
-        </select>
-        <small class="form-text text-muted">Hold CTRL to select multiple.</small>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Add New Tags (comma separated)</label>
-        <input type="text" name="newTags" class="form-control" placeholder="e.g. c#, blazor, api" />
-    </div>
-    
-    <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" id="isPrivate" name="IsPrivate" value="true" />
-        <label class="form-check-label" for="isPrivate">
-            Make post private
-            @if (User.IsInRole("Admin"))
-            {
-                <span class="text-muted">(Admin doesn't need password)</span>
-            }
-        </label>
-    </div>
-
-    <div class="mb-3" id="passwordField" style="display:none;">
-        <label for="AccessPassword" class="form-label">Password for private post</label>
-        <input type="password" class="form-control" id="AccessPassword" name="AccessPassword" />
-        <span class="text-danger" id="passwordError"></span>
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Image (optional)</label>
-        <input type="file" name="imageFile" class="form-control" accept="image/*" />
-    </div>
-
-    <button type="submit" class="btn btn-success">Create Post</button>
-    <a asp-action="Details" asp-controller="Blogs" asp-route-id="@ViewBag.BlogId" class="btn btn-secondary">Cancel</a>
+    @if (ViewBag.PostId != null)
+    {
+        <a asp-controller="Posts" asp-action="Details" asp-route-id="@ViewBag.PostId" class="btn btn-secondary">Back to Post</a>
+    }
 </form>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const checkbox = document.getElementById('isPrivate');
-            const passwordField = document.getElementById('passwordField');
-            const passwordError = document.getElementById('passwordError');
-
-            checkbox.addEventListener('change', function () {
-                passwordField.style.display = this.checked ? 'block' : 'none';
-                passwordError.textContent = '';
-            });
-        });
-    </script>
 }
